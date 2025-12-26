@@ -13,10 +13,11 @@
             --bg-light: #f4f7f6; 
             --text-dark: #2c3e50; 
             --white: #ffffff; 
+            --gold-text: #ffd700;
         }
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
         
-        /* --- HEADER (Clean Image Only) --- */
+        /* --- HEADER --- */
         header { background: var(--bg-light); padding: 0; text-align: center; }
         
         .banner-container { 
@@ -24,35 +25,55 @@
             margin: 0 auto; 
             padding: 0; 
             width: 100%;
+            position: relative; /* Key for overlay */
         }
         
         .main-banner-img { 
             width: 100%; 
             height: auto; 
             display: block; 
-            /* No text overlay here */
         }
 
-        /* --- NAME SECTION (Simple & Clean below banner) --- */
-        .name-header {
+        /* --- ENGLISH TEXT OVERLAY AT BOTTOM --- */
+        .banner-overlay-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            /* Dark Gradient background for readability */
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+            padding: 80px 20px 25px 20px; 
             text-align: center;
-            padding: 20px 10px;
-            background: #fff;
-            border-bottom: 1px solid #ddd;
+            box-sizing: border-box;
         }
-        .name-header h1 {
+
+        .banner-overlay-bottom h1 {
             margin: 0;
-            color: var(--primary-color);
-            font-size: 1.8em; /* Decent size */
+            color: var(--white);
+            font-size: 2.2em;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            line-height: 1.2;
         }
-        .name-header p {
+
+        .banner-overlay-bottom p {
             margin: 5px 0 0;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .mission-highlight {
+            color: var(--gold-text);
+            font-weight: 700;
+            display: block; 
+            margin-top: 5px;
             font-size: 1em;
-            color: #b8860b; /* Gold Subtitle */
-            font-weight: 600;
+            text-shadow: 1px 1px 5px rgba(0,0,0,1);
+            letter-spacing: 0.5px;
         }
 
         /* Ticker */
@@ -137,7 +158,14 @@
         .honors-list li { padding: 8px 0; border-bottom: 1px solid #dae3e7; font-size: 0.9em; display: flex; align-items: flex-start; }
         .honors-list li::before { content: '🏆'; margin-right: 10px; font-size: 1.1em; color: var(--gold-dark); }
         
+        /* Mobile Optimization */
         @media (max-width: 768px) { 
+            .banner-overlay-bottom h1 { font-size: 1.4em; }
+            .banner-overlay-bottom p { font-size: 0.9em; }
+            .mission-highlight { font-size: 0.85em; }
+            
+            .main-banner-img { min-height: 250px; object-fit: cover; } 
+
             .mission-card { flex-direction: column; text-align: center; } 
             .mission-card .card-img, .mission-card .card-content { width: 100%; text-align: center; } 
             .mission-card .card-img { height: 120px; width: 50%; margin: 0 auto; }
@@ -150,6 +178,7 @@
             header { padding: 20px 0 0 0; }
             .banner-container { padding: 0 15px; }
             .main-banner-img { border-radius: 15px; }
+            .banner-overlay-bottom { border-radius: 0 0 15px 15px; }
         }
     </style>
 </head>
@@ -157,14 +186,15 @@
 
 <header>
     <div class="banner-container">
-        <img src="banner.jpg" alt="Haji Shabbir Ahmed Shigri - Official Banner" class="main-banner-img">
+        <img src="banner_clean.jpg" alt="Haji Shabbir Ahmed Shigri - Official Banner" class="main-banner-img">
+        
+        <div class="banner-overlay-bottom">
+            <h1>Haji Shabbir Ahmed Shigri</h1>
+            <p>Senior Journalist | Cultural Ambassador | Founder Noor Productions</p>
+            <span class="mission-highlight">Core Mission: Noor-ul-Quran (Visual Quran Project)</span>
+        </div>
     </div>
 </header>
-
-<div class="name-header">
-    <h1>Haji Shabbir Ahmed Shigri</h1>
-    <p>International Journalist, Media Legend & Cultural Expert</p>
-</div>
 
 <div class="news-ticker-container">
     <div class="ticker-text">
