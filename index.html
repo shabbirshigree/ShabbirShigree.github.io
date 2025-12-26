@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاجی شبیر احمد شگری | آفیشل ویب سائٹ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-color: #0f4c75; --accent-color: #c8a165; --bg-light: #f4f7f6; --text-dark: #333; --white: #ffffff; }
+        body { font-family: 'Noto Nastaliq Urdu', 'Arial', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; }
+        header { background: linear-gradient(rgba(15, 76, 117, 0.95), rgba(10, 46, 71, 0.95)), url('diplomacy.jpg'); background-size: cover; background-position: center; color: var(--white); text-align: center; padding: 80px 20px; }
+        .profile-pic { width: 170px; height: 170px; border-radius: 50%; border: 5px solid var(--accent-color); object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        h1 { margin: 10px 0 5px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .tagline { font-size: 1.2em; color: #dbe9f1; margin-bottom: 20px; }
+        .header-mission { background-color: rgba(200, 161, 101, 0.2); padding: 10px 25px; border-radius: 50px; display: inline-block; border: 1px solid var(--accent-color); margin-top: 15px; font-weight: bold; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 50px; font-size: 2em; position: relative; font-weight: 700; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--accent-color); margin: 10px auto 0; border-radius: 2px; }
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; border-bottom: 4px solid var(--primary-color); display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-7px); }
+        .card-img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 25px; flex-grow: 1; }
+        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.4em; }
+        .card p { font-size: 0.95em; color: #555; margin-bottom: 20px; }
+        .card-btn { display: block; padding: 10px 0; background-color: var(--primary-color); color: var(--white); text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s; margin-top: auto; }
+        .card-btn:hover { background-color: var(--accent-color); }
+        .mission-card { grid-column: 1 / -1; background: linear-gradient(to right, #fffcf5, #fff); border-top: 5px solid var(--accent-color); border-bottom: none; display: flex; flex-direction: row; align-items: center; }
+        .mission-card .card-img { width: 40%; height: 250px; }
+        .mission-card .card-content { width: 60%; }
+        .bio-section { background: var(--white); padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 30px; }
+        .bio-text { flex: 2; }
+        .bio-honors { flex: 1; background: #f0f7fa; padding: 20px; border-radius: 10px; border-right: 4px solid var(--accent-color); }
+        .honors-list { list-style: none; padding: 0; }
+        .honors-list li { padding: 10px 0; border-bottom: 1px solid #ddd; font-size: 0.95em; }
+        .honors-list li:last-child { border-bottom: none; }
+        .honors-list li strong { color: var(--primary-color); display: block; }
+        footer { background-color: #222; color: #bbb; text-align: center; padding: 30px 20px; margin-top: 60px; }
+        @media (max-width: 768px) { .mission-card { flex-direction: column; } .mission-card .card-img, .mission-card .card-content { width: 100%; } .bio-section { flex-direction: column; } h1 { font-size: 2em; } }
+    </style>
+</head>
+<body>
+<header>
+    <img src="profile.png" alt="حاجی شبیر احمد شگری" class="profile-pic">
+    <h1>حاجی شبیر احمد شگری</h1>
+    <p class="tagline">سینئر صحافی | سفیرِ ثقافت | بانی نور پروڈکشنز</p>
+    <div class="header-mission">✨ مرکزی مشن: نور القرآن (ویژول قرآن پراجیکٹ)</div>
+</header>
+<div class="container">
+    <div class="card mission-card" style="margin-bottom: 50px;">
+        <img src="diplomacy.jpg" alt="Mission" class="card-img">
+        <div class="card-content">
+            <h3>📖 نور القرآن (ویژول پراجیکٹ)</h3>
+            <p>میرا سب سے اہم مشن اور صدقہ جاریہ۔ قرآن پاک کا ویڈیو ترجمہ، جس میں ایرانی قاری کی تلاوت کے ساتھ میرا اردو ترجمہ شامل ہے۔</p>
+            <a href="#" class="card-btn">پراجیکٹ کی تفصیلات</a>
+        </div>
+    </div>
+    <h2 class="section-title">مرکزی گوشے اور خدمات</h2>
+    <div class="hub-grid">
+        <div class="card">
+            <img src="radio.jpg" alt="Radio Pakistan" class="card-img">
+            <div class="card-content">
+                <h3>🎙️ ریڈیو اور براڈکاسٹنگ</h3>
+                <p>ریڈیو پاکستان پر پروگرام "پھول اور کلیاں" اور "عزمِ جواں" کی میزبانی۔ ایف ایم 93 پر طویل خدمات اور لائیو ترجمہ کی مہارت۔</p>
+                <a href="#" class="card-btn">مزید جانیں</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="film.jpg" alt="Iranian Film Festival" class="card-img">
+            <div class="card-content">
+                <h3>🎥 فلم اور میڈیا ایوارڈز</h3>
+                <p>پاکستان میں کامیاب "ایرانی فلم فیسٹیول" کے انعقاد پر <strong>پاک ایران فلم ایوارڈ</strong> کا اعزاز۔</p>
+                <a href="#" class="card-btn">گیلری دیکھیں</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="tv.jpg" alt="TV Hosting" class="card-img">
+            <div class="card-content">
+                <h3>📺 ٹی وی اور صحافت</h3>
+                <p>347+ کالمز، 80+ اسپیشل ایڈیشنز اور مختلف ٹی وی چینلز پر بطور اینکر پرسن خدمات۔</p>
+                <a href="https://shabbirshigri.blogspot.com" target="_blank" class="card-btn">بلاگ پڑھیں</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="diplomacy.jpg" alt="Diplomacy" class="card-img">
+            <div class="card-content">
+                <h3>🇵🇰🇮🇷 ثقافتی سفارت کاری</h3>
+                <p>بین الاقوامی وفود کی قیادت اور خانہ فرہنگ ایران میں بطور PRO خدمات۔ ہائبرڈ ٹورازم اور ثقافتی ہم آہنگی کے فروغ میں کلیدی کردار۔</p>
+                <a href="#" class="card-btn">تفصیلات</a>
+            </div>
+        </div>
+    </div>
+    <h2 class="section-title">تعارف اور اعزازات</h2>
+    <div class="bio-section">
+        <div class="bio-text">
+            <h3>میرا سفر</h3>
+            <p>میں ایک سینئر صحافی، کالم نگار اور پروڈیوسر ہوں۔ میری صحافتی زندگی کا آغاز اسکردو کی وادیوں سے ہوا اور ریڈیو پاکستان سے ہوتا ہوا بین الاقوامی سطح تک پہنچا۔ میرا مقصد شہرت نہیں بلکہ اپنی خدمات کو اگلی نسل کے لیے محفوظ کرنا ہے۔</p>
+        </div>
+        <div class="bio-honors">
+            <h3 style="color: var(--primary-color); text-align: center;">🏅 کلیدی اعزازات</h3>
+            <ul class="honors-list">
+                <li><strong>خادمِ امام رضا علیہ السلام (2011)</strong> مشہد مقدس میں باقاعدہ خادمی کا اعزاز۔</li>
+                <li><strong>پاک ایران فلم ایوارڈ</strong> کامیاب فلم فیسٹیول کے انعقاد پر۔</li>
+                <li><strong>گولڈ میڈل (Gold Medal)</strong> علامہ اقبالؒ پر تحقیقی ڈاکومنٹری کے لیے۔</li>
+                <li><strong>صدائے غازی ایوارڈ</strong> حرم حضرت عباس علمدارؑ کربلا میں خدمات پر۔</li>
+                <li><strong>صدر (President)</strong> پاک ایران فرینڈشپ اینڈ ریلیشنز ایسوسی ایشن۔</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>تمام حقوق محفوظ ہیں &copy; 2025 - حاجی شبیر احمد شگری</p>
+    <p>رابطہ: shigri51214@gmail.com</p>
+</footer>
+</body>
+</html>
