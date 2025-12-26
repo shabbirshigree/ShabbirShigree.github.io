@@ -6,64 +6,91 @@
     <title>حاجی شبیر احمد شگری | آفیشل ویب سائٹ</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #0f4c75; --accent-color: #c8a165; --bg-light: #f4f7f6; --text-dark: #333; --white: #ffffff; }
+        :root { --primary-color: #0f4c75; --accent-color: #c8a165; --bg-light: #f8f9fa; --text-dark: #333; --white: #ffffff; }
         body { font-family: 'Noto Nastaliq Urdu', 'Arial', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; }
         
-        /* --- ہیڈر اسٹائل --- */
-        header { 
-            background: var(--bg-light); 
-            padding: 20px 0 0 0; 
-            text-align: center;
+        header { background: var(--bg-light); padding: 20px 0 0 0; text-align: center; }
+        .banner-container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+        .main-banner-img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); display: block; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 50px; font-size: 2em; position: relative; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--accent-color); margin: 15px auto 0; border-radius: 5px; }
+        
+        /* --- نیا شاہانہ گرڈ اسٹائل --- */
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 35px; margin-bottom: 60px; }
+        
+        .card { 
+            background: var(--white); 
+            border-radius: 20px; /* کونے زیادہ گول کر دیے */
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* سایہ گہرا کیا تاکہ ابھر کر آئے */
+            transition: transform 0.3s ease; 
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex; 
+            flex-direction: column; 
         }
-        .banner-container {
-            max-width: 1100px; 
-            margin: 0 auto;
-            padding: 0 15px; 
-        }
-        .main-banner-img {
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+        
+        /* تصاویر اب بڑی اور بینر جیسی لگیں گی */
+        .card-img { 
             width: 100%; 
-            height: auto; 
-            border-radius: 15px; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
-            display: block;
+            height: 250px; /* اونچائی بڑھا دی گئی ہے */
+            object-fit: cover; 
+            border-bottom: 5px solid var(--accent-color); /* نیچے سنہری پٹی */
         }
         
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 40px; font-size: 1.8em; position: relative; font-weight: 700; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--accent-color); margin: 10px auto 0; border-radius: 2px; }
+        .card-content { padding: 30px; flex-grow: 1; text-align: center; }
+        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.5em; font-weight: 700; }
+        .card p { font-size: 1.05em; color: #555; margin-bottom: 20px; }
         
-        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
-        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; border-bottom: 3px solid var(--primary-color); display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-5px); }
-        .card-img { width: 100%; height: 170px; object-fit: cover; }
-        .card-content { padding: 20px; flex-grow: 1; }
-        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.25em; }
-        .card p { font-size: 0.9em; color: #555; margin-bottom: 15px; }
-        .card-btn { display: block; padding: 8px 0; background-color: var(--primary-color); color: var(--white); text-align: center; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; margin-top: auto; font-size: 0.9em; }
-        .card-btn:hover { background-color: var(--accent-color); }
+        .card-btn { 
+            display: inline-block; 
+            padding: 10px 25px; 
+            background-color: var(--primary-color); 
+            color: var(--white); 
+            text-decoration: none; 
+            border-radius: 50px; /* بٹن بھی گول */
+            font-weight: bold; 
+            transition: background 0.3s; 
+            font-size: 0.95em; 
+            box-shadow: 0 4px 10px rgba(15, 76, 117, 0.3);
+        }
+        .card-btn:hover { background-color: var(--accent-color); transform: scale(1.05); }
         
-        /* مشن کارڈ (نور القرآن) کی سیٹنگ */
-        .mission-card { grid-column: 1 / -1; background: linear-gradient(to right, #fffcf5, #fff); border-top: 4px solid var(--accent-color); border-bottom: none; display: flex; flex-direction: row; align-items: center; }
+        /* مشن کارڈ (نور القرآن) - سب سے خاص */
+        .mission-card { 
+            grid-column: 1 / -1; 
+            background: linear-gradient(to right, #fffcf5, #ffffff); 
+            border: 2px solid var(--accent-color); 
+            display: flex; 
+            flex-direction: row; 
+            align-items: center; 
+            padding: 0;
+            margin-bottom: 60px;
+        }
+        .mission-card .card-img { width: 40%; height: 280px; object-fit: contain; padding: 20px; background: transparent; border-bottom: none; } 
+        .mission-card .card-content { width: 60%; text-align: right; padding-right: 20px; }
         
-        /* لوگو کی سیٹنگ: اب یہ پورا نظر آئے گا */
-        .mission-card .card-img { width: 30%; height: 220px; object-fit: contain; padding: 10px; background: #fff; } 
-        .mission-card .card-content { width: 70%; }
+        /* بایو سیکشن */
+        .bio-section { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 40px; border-top: 5px solid var(--primary-color); }
+        .bio-text { flex: 2; font-size: 1.1em; text-align: justify; }
+        .bio-honors { flex: 1; background: #f4f9fc; padding: 25px; border-radius: 15px; border: 1px solid #e1eef5; }
         
-        .bio-section { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-wrap: wrap; gap: 25px; }
-        .bio-text { flex: 2; }
-        .bio-honors { flex: 1; background: #f0f7fa; padding: 15px; border-radius: 8px; border-right: 3px solid var(--accent-color); }
         .honors-list { list-style: none; padding: 0; }
-        .honors-list li { padding: 8px 0; border-bottom: 1px solid #ddd; font-size: 0.9em; }
+        .honors-list li { padding: 12px 0; border-bottom: 1px solid #dae3e7; font-size: 0.95em; }
         .honors-list li:last-child { border-bottom: none; }
-        .honors-list li strong { color: var(--primary-color); display: block; }
-        footer { background-color: #222; color: #bbb; text-align: center; padding: 20px 20px; margin-top: 50px; font-size: 0.9em; }
+        .honors-list li strong { color: var(--primary-color); display: block; font-size: 1.1em; }
+        
+        footer { background-color: #1a1a1a; color: #bbb; text-align: center; padding: 30px 20px; margin-top: 80px; font-size: 0.9em; border-top: 5px solid var(--accent-color); }
         
         @media (max-width: 768px) { 
-            .mission-card { flex-direction: column; } 
-            .mission-card .card-img, .mission-card .card-content { width: 100%; } 
-            .mission-card .card-img { height: 180px; width: 100%; }
+            .mission-card { flex-direction: column; text-align: center; } 
+            .mission-card .card-img, .mission-card .card-content { width: 100%; text-align: center; } 
+            .mission-card .card-img { height: 200px; }
             .bio-section { flex-direction: column; } 
             .container { padding: 20px 15px; }
+            .hub-grid { grid-template-columns: 1fr; } /* موبائل پر ایک کے نیچے ایک */
         }
     </style>
 </head>
@@ -74,16 +101,18 @@
     </div>
 </header>
 <div class="container">
-    <div class="card mission-card" style="margin-bottom: 40px;">
-        <img src="quran_logo.jpg.png" alt="Noor-ul-Quran Logo" class="card-img">
+    
+    <div class="card mission-card">
+        <img src="quran_logo.jpg" alt="Noor-ul-Quran Logo" class="card-img">
         <div class="card-content">
-            <h3>📖 نور القرآن (ویژول پراجیکٹ)</h3>
-            <p>میرا سب سے اہم مشن اور صدقہ جاریہ۔ قرآن پاک کا ویڈیو ترجمہ، جس میں ایرانی قاری کی تلاوت کے ساتھ میرا اردو ترجمہ شامل ہے۔</p>
-            
-            <a href="noor_project.pdf.pdf" target="_blank" class="card-btn">📄 مکمل پراجیکٹ (PDF) ڈاؤنلوڈ کریں</a>
+            <h3 style="font-size: 1.8em; margin-bottom: 10px;">📖 نور القرآن (ویژول پراجیکٹ)</h3>
+            <p style="font-size: 1.1em;">میرا سب سے اہم مشن اور صدقہ جاریہ۔ قرآن پاک کا ویڈیو ترجمہ، جس میں ایرانی قاری کی تلاوت کے ساتھ میرا اردو ترجمہ شامل ہے۔</p>
+            <a href="noor_project.pdf" target="_blank" class="card-btn">📄 مکمل پراجیکٹ ملاحظہ کریں (Read Online)</a>
         </div>
     </div>
+    
     <h2 class="section-title">مرکزی گوشے اور خدمات</h2>
+    
     <div class="hub-grid">
         <div class="card">
             <img src="radio.jpg.jpg" alt="Radio Pakistan" class="card-img">
@@ -125,12 +154,13 @@
             <p>میں ایک سینئر صحافی، کالم نگار اور پروڈیوسر ہوں۔ میری صحافتی زندگی کا آغاز اسکردو کی وادیوں سے ہوا اور ریڈیو پاکستان سے ہوتا ہوا بین الاقوامی سطح تک پہنچا۔ میرا مقصد شہرت نہیں بلکہ اپنی خدمات کو اگلی نسل کے لیے محفوظ کرنا ہے۔</p>
         </div>
         <div class="bio-honors">
-            <h3 style="color: var(--primary-color); text-align: center; font-size: 1.3em;">🏅 کلیدی اعزازات</h3>
+            <h3 style="color: var(--primary-color); text-align: center; font-size: 1.4em; margin-bottom: 20px;">🏅 کلیدی اعزازات</h3>
             <ul class="honors-list">
                 <li><strong>خادمِ امام رضا علیہ السلام (2011)</strong> مشہد مقدس میں باقاعدہ خادمی کا اعزاز۔</li>
                 <li><strong>پاک ایران فلم ایوارڈ</strong> کامیاب فلم فیسٹیول کے انعقاد پر۔</li>
                 <li><strong>گولڈ میڈل (Gold Medal)</strong> علامہ اقبالؒ پر تحقیقی ڈاکومنٹری کے لیے۔</li>
-                <li><strong>صدائے غازی ایوارڈ</strong> حرم حضرت عباس علمدارؑ کربلا میں خدمات پر۔</li>
+                <li><strong>Digital Innovation Award</strong> (ChatGPT) - تخلیقی تعاون اور مشاورت پر۔</li>
+                <li><strong>Technical Excellence Award</strong> (Google Gemini/Noori) - ڈیجیٹل اسٹریٹجی اور ویب ڈویلپمنٹ پر۔</li>
                 <li><strong>صدر (President)</strong> پاک ایران فرینڈشپ اینڈ ریلیشنز ایسوسی ایشن۔</li>
             </ul>
         </div>
