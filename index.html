@@ -50,7 +50,7 @@
         .highlight-box ul { padding-left: 20px; margin-bottom: 0; }
         .highlight-box li { margin-bottom: 6px; font-size: 0.95em; }
 
-        /* --- DIGITAL LIBRARY (BACKGROUND SHADES ADDED) --- */
+        /* --- DIGITAL LIBRARY --- */
         .books-section { 
             background: linear-gradient(135deg, #0f4c75 0%, #0a3d61 100%);
             color: #fff; padding: 35px; border-radius: 15px; text-align: center; margin-bottom: 50px; 
@@ -60,38 +60,24 @@
         .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; text-align: left; }
         
         .book-item { 
-            /* Default background if no specific class */
             background: rgba(255, 255, 255, 0.1); 
             padding: 25px 20px; border-radius: 12px; 
             border: 1px solid rgba(255, 255, 255, 0.2); 
             transition: all 0.3s ease; 
             display: flex; flex-direction: column; 
             position: relative; overflow: hidden;
-            /* Dark overlay to make text readable */
             box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
         }
         
-        /* BACKGROUND SHADES FOR SPECIFIC BOOKS */
-        /* Banoye Bahisht: Soft Gold/Green or use 'fatima.jpg' */
+        /* BACKGROUND IMAGE FOR BOOY-E-BAHISHT */
         .book-fatima { 
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url('fatima.jpg');
-            background-size: cover; background-position: center; background-color: #554826; /* Fallback color */
+            /* This will show the cover image if uploaded as booye_bahisht_cover.jpg */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('booye_bahisht_cover.jpg');
+            background-size: cover; background-position: center; background-color: #554826; 
         }
-        /* Siyahat-e-Iran: Teal/Blue or use 'iran.jpg' */
-        .book-iran { 
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('iran.jpg');
-            background-size: cover; background-position: center; background-color: #1a4d5e; 
-        }
-        /* Madina: Green Dome Color or use 'madina.jpg' */
-        .book-madina { 
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('madina.jpg');
-            background-size: cover; background-position: center; background-color: #154625; 
-        }
-        /* Imam Reza: Turquoise/Gold or use 'reza.jpg' */
-        .book-reza { 
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('reza.jpg');
-            background-size: cover; background-position: center; background-color: #0b5e68; 
-        }
+        .book-iran { background-color: #1a4d5e; }
+        .book-madina { background-color: #154625; }
+        .book-reza { background-color: #0b5e68; }
 
         .book-item:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); border-color: var(--accent-color); }
         .book-item h4 { margin: 0 0 10px; color: var(--accent-color); font-size: 1.2em; line-height: 1.3; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
@@ -198,10 +184,11 @@
         <div class="books-grid">
             
             <div class="book-item book-fatima">
-                <span class="badge-illustrated">New Arrival</span>
-                <h4>Banoye Bahisht / Abwab-e-Bahisht<br><small>(بانوئے بہشت)</small></h4>
-                <p>A masterpiece illustrated biography of <strong>Syeda Fatimah Zahra (S.A)</strong>.</p>
-                <a href="#" class="read-book-btn">📖 Read Online</a>
+                <span class="badge-illustrated">Fragrance of Paradise</span>
+                <h4>Booy-e-Bahisht<br><small>(بوئے بہشت)</small></h4>
+                <p>Biography of Syeda Fatima Zahra (S.A).<br>
+                <em style="font-size: 0.85em; color: #ddd;">Dedicated to Late Dr. Muhammad Raza.</em></p>
+                <a href="booye_bahisht.pdf" target="_blank" class="read-book-btn">📖 Read Book (PDF)</a>
             </div>
 
             <div class="book-item book-iran">
