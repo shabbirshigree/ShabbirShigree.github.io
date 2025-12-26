@@ -20,32 +20,63 @@
         .banner-container { max-width: 1000px; margin: 0 auto; padding: 0 15px; }
         .main-banner-img { width: 100%; height: auto; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); display: block; }
         
-        /* Ticker Speed Controlled Here */
         .news-ticker-container {
             background: linear-gradient(90deg, #b8860b, #e0aa3e, #b8860b);
             overflow: hidden; white-space: nowrap; padding: 8px 0; margin-top: -5px; position: relative; z-index: 10;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-bottom: 2px solid #fff;
         }
-        /* Changed from 30s to 60s (Slower) */
         .ticker-text { 
             display: inline-block; color: #000; font-weight: 700; font-size: 1em; padding-left: 100%; 
             animation: scroll-left 60s linear infinite; 
         }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        .container { max-width: 950px; margin: 0 auto; padding: 30px 20px; }
+        .container { max-width: 950px; margin: 0 auto; padding: 20px 20px; }
         .section-title { text-align: center; color: var(--primary-color); margin-bottom: 30px; font-size: 1.8em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--gold-gradient); margin: 10px auto 0; border-radius: 5px; }
         
-        .card-btn { display: inline-block; padding: 8px 25px; background-color: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.85em; margin-top: 15px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card-btn { display: inline-block; padding: 8px 25px; background-color: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.85em; margin-top: 10px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .card-btn:hover { background: var(--gold-gradient); color: #000; transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(200, 161, 101, 0.4); cursor: pointer; }
 
-        /* --- SIZES REDUCED FURTHER --- */
-        .mission-card { grid-column: 1 / -1; background: linear-gradient(135deg, #fffcf5 0%, #ffffff 100%); border: 2px solid var(--accent-color); display: flex; flex-direction: row; align-items: center; padding: 0; margin-bottom: 40px; }
+        /* --- NOOR UL QURAN TIGHTENING (COMPACT DESIGN) --- */
+        .mission-card { 
+            grid-column: 1 / -1; 
+            background: linear-gradient(135deg, #fffcf5 0%, #ffffff 100%); 
+            border: 2px solid var(--accent-color); 
+            display: flex; 
+            flex-direction: row; 
+            align-items: center; /* Vertically center aligned */
+            padding: 10px; /* Overall padding reduced */
+            margin-bottom: 30px; 
+        }
         
-        /* Logo Size Reduced to 110px */
-        .mission-card .card-img { width: 20%; height: 110px; object-fit: contain; padding: 10px; background: transparent; border-bottom: none; } 
-        .mission-card .card-content { width: 80%; padding: 20px; }
+        .mission-card .card-img { 
+            width: 25%; 
+            height: 130px; 
+            object-fit: contain; 
+            padding: 5px; 
+            background: transparent; 
+            border-bottom: none; 
+        } 
+        
+        .mission-card .card-content { 
+            width: 75%; 
+            padding: 10px 20px; /* Reduced internal padding */
+            text-align: left;
+        }
+
+        /* Tightening the text gaps */
+        .mission-card h3 { 
+            font-size: 1.6em; 
+            margin: 0 0 5px 0; /* Reduced bottom margin */
+            line-height: 1.2; /* Tighter line height for title */
+        }
+        
+        .mission-card p { 
+            font-size: 1em; 
+            margin-bottom: 8px; /* Reduced gap between text and button */
+            line-height: 1.4; /* Tighter line height for paragraph */
+        }
 
         .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin-bottom: 40px; }
         .highlight-box { background: #fff; padding: 20px; border-radius: 12px; border-left: 5px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; }
@@ -93,7 +124,6 @@
         .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.02); }
         .card:hover { transform: translateY(-5px); }
         
-        /* --- Small Cards Height Reduced to 110px --- */
         .card-img { width: 100%; height: 110px; object-fit: cover; border-bottom: 3px solid var(--accent-color); }
         
         .card-content { padding: 15px; flex-grow: 1; text-align: left; }
@@ -109,7 +139,7 @@
         @media (max-width: 768px) { 
             .mission-card { flex-direction: column; text-align: center; } 
             .mission-card .card-img, .mission-card .card-content { width: 100%; text-align: center; } 
-            .mission-card .card-img { height: 120px; width: 50%; margin: 0 auto; } /* Adjusted for mobile */
+            .mission-card .card-img { height: 120px; width: 50%; margin: 0 auto; }
             .highlights-grid { grid-template-columns: 1fr; }
             .books-grid { grid-template-columns: 1fr; text-align: center; }
             .container { padding: 20px 15px; }
@@ -135,8 +165,8 @@
     <div class="card mission-card">
         <img src="quran_logo.jpg.png" alt="Noor-ul-Quran Logo" class="card-img">
         <div class="card-content">
-            <span style="background: var(--primary-color); color: #fff; padding: 5px 10px; border-radius: 5px; font-size: 0.8em; font-weight: bold; letter-spacing: 1px;">WORLD'S FIRST</span>
-            <h3 style="font-size: 1.6em; margin: 10px 0;">📖 Noor-ul-Quran (Visual Project)</h3>
+            <span style="background: var(--primary-color); color: #fff; padding: 4px 10px; border-radius: 5px; font-size: 0.75em; font-weight: bold; letter-spacing: 1px;">WORLD'S FIRST</span>
+            <h3 style="font-size: 1.5em;">📖 Noor-ul-Quran (Visual Project)</h3>
             <p style="font-size: 1em;">A historic milestone: The world's first verse-by-verse Visual Quran translation. Featuring Persian recitation, Urdu translation, and strictly curated visuals to maintain sanctity.</p>
             <a href="noor_project.pdf.pdf" target="_blank" class="card-btn">📄 View Full Project (PDF)</a>
         </div>
@@ -149,18 +179,18 @@
             <ul>
                 <li><strong>One Man Army:</strong> Writer, Composer, Videographer & Editor (All-in-One).</li>
                 <li><strong>Founder & CEO:</strong> Noor Productions.</li>
-                <li><strong>International Journalist:</strong> Writer, Anchor, and Producer.</li>
-                <li><strong>Editor:</strong> Khana-e-Farhang Magazines 'Shakh-e-Nabat' & 'Iran Shanasi'.</li>
+                <li><strong>Childhood Writer:</strong> 'Nawa-e-Waqt' (Children's Page).</li>
+                <li><strong>Prod. Manager:</strong> Int'l Documentary on Allama Iqbal (Filmed in Pakistan).</li>
                 <li><strong>President:</strong> Pak-Iran Friendship & Relations Association.</li>
             </ul>
         </div>
         <div class="highlight-box">
             <h4>✍️ Literary & Digital Work</h4>
             <ul>
+                <li><strong>Radio Pakistan:</strong> Hosted Urdu/Balti programs in Skardu (1980s-1992).</li>
+                <li><strong>Editor:</strong> Magazines 'Shakh-e-Nabat' & 'Iran Shanasi'.</li>
+                <li><strong>First Edition:</strong> Launched Urdu edition of 'Khorasan-e-Razavi' in Pakistan.</li>
                 <li><strong>300+ Articles:</strong> Published columns and travelogues.</li>
-                <li><strong>100+ Special Editions:</strong> Covering religious and cultural themes.</li>
-                <li><strong>Bilingual Website:</strong> Founder of Pak-Iran website (Urdu/Persian).</li>
-                <li><strong>Documentaries:</strong> Produced countless documentaries on culture and history.</li>
             </ul>
         </div>
         <div class="highlight-box" style="border-left-color: var(--accent-color);">
