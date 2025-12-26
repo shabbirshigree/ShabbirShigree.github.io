@@ -27,7 +27,6 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
             display: block;
         }
-        /* --- ہیڈر ختم --- */
         
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
         .section-title { text-align: center; color: var(--primary-color); margin-bottom: 40px; font-size: 1.8em; position: relative; font-weight: 700; }
@@ -45,9 +44,10 @@
         
         /* مشن کارڈ (نور القرآن) کی سیٹنگ */
         .mission-card { grid-column: 1 / -1; background: linear-gradient(to right, #fffcf5, #fff); border-top: 4px solid var(--accent-color); border-bottom: none; display: flex; flex-direction: row; align-items: center; }
-        /* لوگو کو پورا دکھانے کے لیے object-fit تبدیل کیا ہے */
-        .mission-card .card-img { width: 35%; height: 220px; object-fit: contain; padding: 10px; background: #fff; } 
-        .mission-card .card-content { width: 65%; }
+        
+        /* لوگو کی سیٹنگ: اب یہ پورا نظر آئے گا */
+        .mission-card .card-img { width: 30%; height: 220px; object-fit: contain; padding: 10px; background: #fff; } 
+        .mission-card .card-content { width: 70%; }
         
         .bio-section { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-wrap: wrap; gap: 25px; }
         .bio-text { flex: 2; }
@@ -61,7 +61,7 @@
         @media (max-width: 768px) { 
             .mission-card { flex-direction: column; } 
             .mission-card .card-img, .mission-card .card-content { width: 100%; } 
-            .mission-card .card-img { height: 200px; }
+            .mission-card .card-img { height: 180px; width: 100%; }
             .bio-section { flex-direction: column; } 
             .container { padding: 20px 15px; }
         }
@@ -75,12 +75,12 @@
 </header>
 <div class="container">
     <div class="card mission-card" style="margin-bottom: 40px;">
-        <img src="quran_logo.jpg" alt="Noor-ul-Quran Logo" class="card-img">
+        <img src="quran_logo.jpg.png" alt="Noor-ul-Quran Logo" class="card-img">
         <div class="card-content">
             <h3>📖 نور القرآن (ویژول پراجیکٹ)</h3>
             <p>میرا سب سے اہم مشن اور صدقہ جاریہ۔ قرآن پاک کا ویڈیو ترجمہ، جس میں ایرانی قاری کی تلاوت کے ساتھ میرا اردو ترجمہ شامل ہے۔</p>
             
-            <a href="noor_project.pdf" target="_blank" class="card-btn">📄 مکمل پراجیکٹ (PDF) ڈاؤنلوڈ کریں</a>
+            <a href="noor_project.pdf.pdf" target="_blank" class="card-btn">📄 مکمل پراجیکٹ (PDF) ڈاؤنلوڈ کریں</a>
         </div>
     </div>
     <h2 class="section-title">مرکزی گوشے اور خدمات</h2>
