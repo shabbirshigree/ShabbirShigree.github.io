@@ -9,24 +9,35 @@
         :root { --primary-color: #0f4c75; --accent-color: #c8a165; --bg-light: #f4f7f6; --text-dark: #333; --white: #ffffff; }
         body { font-family: 'Noto Nastaliq Urdu', 'Arial', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; }
         
-        /* ہیڈر کی سیٹنگز - اونچائی کم کی گئی ہے */
+        /* ہیڈر کی نئی سیٹنگز - بینر اسٹائل */
         header { 
-            background: linear-gradient(rgba(15, 76, 117, 0.95), rgba(10, 46, 71, 0.95)), url('سفارت کاری.jpg.jpg'); 
+            /* یہاں آپ کی نئی تصویر لگے گی */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('banner.jpg'); 
             background-size: cover; 
-            background-position: center; 
+            background-position: center top; /* تصویر کو اوپر سے دکھائے گا تاکہ چہرہ نظر آئے */
             color: var(--white); 
             text-align: center; 
-            padding: 50px 20px; /* پہلے 80 تھا اب 50 کر دیا */
+            padding: 60px 20px; /* اونچائی کم کر دی ہے */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         
-        /* پروفائل تصویر کا سائز تھوڑا چھوٹا کیا ہے */
-        .profile-pic { width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--accent-color); object-fit: cover; margin-bottom: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        /* نام اور ٹائٹل کے لیے شیڈو تاکہ تصویر کے اوپر صاف نظر آئے */
+        h1 { margin: 0 0 5px; font-size: 2.2em; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); }
+        .tagline { font-size: 1.1em; color: #fff; margin-bottom: 15px; text-shadow: 1px 1px 5px rgba(0,0,0,0.8); font-weight: bold; }
         
-        h1 { margin: 5px 0 5px; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .tagline { font-size: 1.1em; color: #dbe9f1; margin-bottom: 15px; }
-        .header-mission { background-color: rgba(200, 161, 101, 0.2); padding: 8px 20px; border-radius: 50px; display: inline-block; border: 1px solid var(--accent-color); margin-top: 10px; font-weight: bold; font-size: 0.9em; }
+        /* مشن والا ڈبہ */
+        .header-mission { 
+            background-color: rgba(15, 76, 117, 0.85); 
+            padding: 8px 25px; 
+            border-radius: 50px; 
+            display: inline-block; 
+            border: 1px solid var(--accent-color); 
+            margin-top: 10px; 
+            font-weight: bold; 
+            font-size: 0.9em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
         
-        /* کنٹینر کا سائز کم کیا گیا ہے تاکہ کمپیوٹر پر پھیلے نہیں */
         .container { max-width: 950px; margin: 0 auto; padding: 30px 20px; }
         
         .section-title { text-align: center; color: var(--primary-color); margin-bottom: 40px; font-size: 1.8em; position: relative; font-weight: 700; }
@@ -35,18 +46,15 @@
         .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
         .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; border-bottom: 3px solid var(--primary-color); display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-5px); }
-        
-        /* کارڈ کی تصویر کی اونچائی کم کی گئی ہے */
         .card-img { width: 100%; height: 170px; object-fit: cover; }
         .card-content { padding: 20px; flex-grow: 1; }
         .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.25em; }
         .card p { font-size: 0.9em; color: #555; margin-bottom: 15px; }
-        
         .card-btn { display: block; padding: 8px 0; background-color: var(--primary-color); color: var(--white); text-align: center; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; margin-top: auto; font-size: 0.9em; }
         .card-btn:hover { background-color: var(--accent-color); }
         
         .mission-card { grid-column: 1 / -1; background: linear-gradient(to right, #fffcf5, #fff); border-top: 4px solid var(--accent-color); border-bottom: none; display: flex; flex-direction: row; align-items: center; }
-        .mission-card .card-img { width: 35%; height: 220px; } /* سائز ایڈجسٹ کیا */
+        .mission-card .card-img { width: 35%; height: 220px; } 
         .mission-card .card-content { width: 65%; }
         
         .bio-section { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-wrap: wrap; gap: 25px; }
@@ -65,12 +73,12 @@
             .bio-section { flex-direction: column; } 
             h1 { font-size: 1.8em; } 
             .container { padding: 20px 15px; }
+            header { padding: 40px 15px; } /* موبائل پر ہیڈر مزید چھوٹا */
         }
     </style>
 </head>
 <body>
 <header>
-    <img src="profile.png.jpg" alt="حاجی شبیر احمد شگری" class="profile-pic">
     <h1>حاجی شبیر احمد شگری</h1>
     <p class="tagline">سینئر صحافی | سفیرِ ثقافت | بانی نور پروڈکشنز</p>
     <div class="header-mission">✨ مرکزی مشن: نور القرآن (ویژول قرآن پراجیکٹ)</div>
