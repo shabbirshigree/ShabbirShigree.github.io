@@ -85,47 +85,54 @@
         }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        .container { max-width: 950px; margin: 0 auto; padding: 20px 20px 40px; }
+        /* Reduced top padding to move everything up */
+        .container { max-width: 950px; margin: 0 auto; padding: 10px 20px 40px; }
+        
         .section-title { text-align: center; color: var(--primary-color); margin-bottom: 30px; font-size: 1.8em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--gold-gradient); margin: 10px auto 0; border-radius: 5px; }
         
         .card-btn { display: inline-block; padding: 8px 25px; background-color: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.85em; margin-top: 10px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .card-btn:hover { background: var(--gold-gradient); color: #000; transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(200, 161, 101, 0.4); cursor: pointer; }
 
-        /* --- UPDATED NOOR UL QURAN (SIDE BY SIDE) --- */
+        /* --- UPDATED NOOR UL QURAN (SWAPPED SIDES) --- */
         .mission-card { 
             grid-column: 1 / -1; 
             background: linear-gradient(135deg, #fffcf5 0%, #ffffff 100%); 
             border: 2px solid var(--accent-color); 
             display: flex; 
-            flex-direction: row; /* Force side-by-side */
-            align-items: center; /* Center vertically */
+            /* row-reverse swaps left and right items */
+            flex-direction: row-reverse; 
+            align-items: center; 
             padding: 15px; 
             margin-bottom: 30px; 
             border-radius: 12px;
             justify-content: space-between;
+            text-align: left; /* Ensure text aligns left */
         }
         
-        /* Logo settings for PC - Compact */
         .mission-card .card-img { 
-            width: 180px; /* Fixed small width */
+            width: 180px; 
             height: auto; 
             object-fit: contain; 
             padding: 0; 
             background: transparent; 
             border-bottom: none; 
-            flex-shrink: 0; /* Prevent logo from shrinking */
-            margin-right: 25px; /* Gap between logo and text */
+            flex-shrink: 0; 
+            /* Margin changed to left side because of row-reverse */
+            margin-left: 25px; 
+            margin-right: 0;
         } 
         
         .mission-card .card-content { 
             flex-grow: 1; 
             padding: 0; 
+            /* Ensure text aligns left */
             text-align: left; 
         }
         
         .mission-card h3 { font-size: 1.6em; margin: 5px 0; line-height: 1.2; }
-        .mission-card p { font-size: 1em; margin-bottom: 10px; line-height: 1.4; }
+        /* Allowed text to wrap naturally (multi-line) */
+        .mission-card p { font-size: 1em; margin-bottom: 10px; line-height: 1.5; }
 
         .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin-bottom: 40px; }
         .highlight-box { background: #fff; padding: 20px; border-radius: 12px; border-left: 5px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; }
@@ -135,20 +142,23 @@
         .highlight-box ul { padding-left: 20px; margin-bottom: 0; }
         .highlight-box li { margin-bottom: 5px; font-size: 0.9em; }
 
-        /* --- DIGITAL LIBRARY (EQUAL BOXES) --- */
+        /* --- DIGITAL LIBRARY (FIXED OVERLAP) --- */
         .books-section { 
             background: linear-gradient(135deg, #0f4c75 0%, #0a3d61 100%);
-            color: #fff; padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 50px; 
+            color: #fff; 
+            /* Increased padding to make blue box bigger */
+            padding: 40px 30px; 
+            border-radius: 15px; text-align: center; margin-bottom: 50px; 
             box-shadow: 0 15px 40px rgba(15, 76, 117, 0.25); 
         }
         .books-section h3 { color: var(--accent-color); margin-top: 0; font-size: 1.6em; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         
         .books-grid { 
             display: grid; 
-            /* Ensures items are roughly equal width */
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 20px; 
-            margin-top: 25px; 
+            /* Increased GAP to prevent overlap (was 20px, now 30px) */
+            gap: 30px; 
+            margin-top: 30px; 
             text-align: left; 
         }
         
@@ -160,8 +170,7 @@
             display: flex; flex-direction: column; 
             position: relative; overflow: hidden;
             box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
-            /* Force equal height */
-            height: 100%; 
+            height: 100%; /* Keep equal height */
         }
         
         .book-fatima { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('booye_bahisht_cover.jpg.png'); background-size: cover; background-position: center; background-color: #554826; }
@@ -173,12 +182,11 @@
         .book-item p { margin: 0; font-size: 0.85em; opacity: 1; color: #fff; flex-grow: 1; margin-bottom: 15px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
         .badge-illustrated { display: inline-block; background: var(--accent-color); color: #000; font-size: 0.7em; padding: 2px 8px; border-radius: 4px; margin-bottom: 10px; font-weight: bold; width: fit-content; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
         
-        /* Buttons pushed to bottom */
         .read-book-btn { 
             display: block; text-align: center; background: rgba(0,0,0,0.6); color: #fff; padding: 8px; border-radius: 5px; 
             text-decoration: none; font-size: 0.85em; font-weight: bold; transition: 0.3s; 
             border: 1px solid var(--accent-color); backdrop-filter: blur(5px);
-            margin-top: auto; /* Push to bottom */
+            margin-top: auto; 
         }
         .read-book-btn:hover { background: var(--accent-color); color: #000; box-shadow: 0 0 15px rgba(200, 161, 101, 0.8); }
 
@@ -200,9 +208,11 @@
         @media (max-width: 768px) { 
             .banner-overlay-bottom h1 { font-size: 1.4em; }
             .banner-overlay-bottom p { font-size: 0.9em; }
+            .mission-highlight { font-size: 0.85em; }
+            
             .main-banner-img { min-height: 250px; object-fit: cover; } 
 
-            /* Stack again on Mobile */
+            /* Stack again on Mobile, Logo on top */
             .mission-card { flex-direction: column; text-align: center; } 
             .mission-card .card-img { width: 50%; margin: 0 auto 15px auto; }
             .mission-card .card-content { text-align: center; }
@@ -243,14 +253,15 @@
 <div class="container">
     
     <div class="card mission-card">
-        <img src="quran_logo.jpg.png" alt="Noor-ul-Quran Logo" class="card-img">
         
         <div class="card-content">
             <span style="background: var(--primary-color); color: #fff; padding: 4px 10px; border-radius: 5px; font-size: 0.75em; font-weight: bold; letter-spacing: 1px;">WORLD'S FIRST</span>
             <h3 style="font-size: 1.5em;">📖 Noor-ul-Quran (Visual Project)</h3>
-            <p style="font-size: 1em;">A historic milestone: The world's first verse-by-verse Visual Quran translation. Featuring Persian recitation, Urdu translation, and strictly curated visuals to maintain sanctity.</p>
+            <p>A historic milestone: The world's first verse-by-verse Visual Quran translation. Featuring Persian recitation, Urdu translation, and strictly curated visuals to maintain sanctity.</p>
             <a href="noor_project.pdf.pdf" target="_blank" class="card-btn">📄 View Full Project (PDF)</a>
         </div>
+
+        <img src="quran_logo.jpg.png" alt="Noor-ul-Quran Logo" class="card-img">
     </div>
 
     <h2 class="section-title">Legacy & Contributions</h2>
