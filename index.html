@@ -6,7 +6,7 @@
     <title>Haji Shabbir Ahmed Shigri | Official Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #0f4c75; --accent-color: #c8a165; --bg-light: #f4f6f8; --text-dark: #2c3e50; --white: #ffffff; }
+        :root { --primary-color: #0f4c75; --accent-color: #c8a165; --gold-dark: #b8860b; --bg-light: #f4f6f8; --text-dark: #2c3e50; --white: #ffffff; }
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
         
         /* --- Header Section --- */
@@ -14,24 +14,25 @@
         .banner-container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
         .main-banner-img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); display: block; }
         
-        /* --- News Ticker (Moving Text) --- */
+        /* --- News Ticker (Golden Style) --- */
         .news-ticker-container {
-            background: var(--primary-color);
+            background: var(--accent-color); /* اب یہ گولڈن ہو گئی ہے */
             overflow: hidden;
             white-space: nowrap;
-            padding: 8px 0;
+            padding: 10px 0;
             margin-top: -5px;
             position: relative;
             z-index: 10;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-bottom: 2px solid #fff;
         }
         .ticker-text {
             display: inline-block;
-            color: #fff;
-            font-weight: 500;
-            font-size: 0.9em;
+            color: #000; /* گولڈن پر کالی لکھائی زیادہ جچتی ہے */
+            font-weight: 600;
+            font-size: 1em;
             padding-left: 100%;
-            animation: scroll-left 25s linear infinite;
+            animation: scroll-left 28s linear infinite;
         }
         @keyframes scroll-left {
             0% { transform: translateX(0); }
@@ -91,7 +92,7 @@
             font-size: 0.9em; 
             text-transform: uppercase;
         }
-        .card-btn:hover { background-color: var(--accent-color); }
+        .card-btn:hover { background-color: var(--gold-dark); }
         
         /* --- Mission Card (Noor-ul-Quran) --- */
         .mission-card { 
@@ -121,7 +122,7 @@
         
         .honors-list { list-style: none; padding: 0; }
         .honors-list li { padding: 12px 0; border-bottom: 1px solid #dae3e7; font-size: 0.95em; display: flex; align-items: flex-start; }
-        .honors-list li::before { content: '🏆'; margin-right: 10px; font-size: 1.1em; }
+        .honors-list li::before { content: '🏆'; margin-right: 10px; font-size: 1.1em; color: var(--gold-dark); }
         .honors-list li:last-child { border-bottom: none; }
         .honors-list li strong { color: var(--primary-color); display: block; font-size: 1.05em; }
         
@@ -149,7 +150,7 @@
 
 <div class="news-ticker-container">
     <div class="ticker-text">
-        ★ HONORED as 'Khadim-e-Hazrat Abbas (A.S)' after Imam Reza (A.S) ★ Successful completion of First Cultural & Pilgrimage Tour to Iran ★ Founder of Noor Productions & Pak-Iran Friendship Association ★ Gold Medalist Senior Journalist ★
+        ★ HONORED as 'Khadim-e-Imam Reza (A.S)' (Official Honorary Servant) ★ HONORED as 'Khadim-e-Hazrat Abbas Alamdar (A.S)' ★ Founder of Noor Productions & Pak-Iran Friendship Association ★ First Visual Quran Project of Pakistan ★
     </div>
 </div>
 
@@ -168,7 +169,7 @@
     <h2 class="section-title">Latest Updates & Articles</h2>
     <div class="latest-updates">
         <div class="update-item">
-            <div class="update-date">RECENT HONOR</div>
+            <div class="update-date">RECENT HIGHLIGHT</div>
             <h4>Khadim-e-Hazrat Abbas Alamdar (A.S)</h4>
             <p>After the blessed title of Khadim-e-Imam Reza (A.S), Haji Shabbir Shigri has been bestowed with the honor of Khadim-e-Hazrat Abbas (A.S) in Karbala.</p>
             <a href="https://shabbirshigri.blogspot.com/" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">Read on Blog &rarr;</a>
@@ -237,8 +238,14 @@
                 </li>
                 <li>
                     <div>
+                        <strong>Khadim-e-Hazrat Abbas Alamdar (a.s)</strong>
+                        Honorary servant at the Shrine of Hazrat Abbas (a.s), Karbala.
+                    </div>
+                </li>
+                <li>
+                    <div>
                         <strong>Sada-e-Ghazi Award</strong>
-                        For services at the Shrine of Hazrat Abbas (a.s), Karbala.
+                        For services at the Shrine of Hazrat Abbas (a.s).
                     </div>
                 </li>
                 <li>
