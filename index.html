@@ -13,11 +13,10 @@
             --bg-light: #f4f7f6; 
             --text-dark: #2c3e50; 
             --white: #ffffff; 
-            --gold-text: #f0c45c;
         }
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
         
-        /* --- HEADER with TEXT OVERLAY --- */
+        /* --- HEADER (Clean Image Only) --- */
         header { background: var(--bg-light); padding: 0; text-align: center; }
         
         .banner-container { 
@@ -25,46 +24,41 @@
             margin: 0 auto; 
             padding: 0; 
             width: 100%;
-            position: relative; /* Needed for overlay text */
         }
         
         .main-banner-img { 
             width: 100%; 
             height: auto; 
             display: block; 
+            /* No text overlay here */
         }
 
-        /* The Text Over the Image */
-        .banner-text-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Centers the text */
+        /* --- NAME SECTION (Simple & Clean below banner) --- */
+        .name-header {
             text-align: center;
-            color: var(--white);
-            width: 95%;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* Strong shadow for readability */
+            padding: 20px 10px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
         }
-        .banner-text-overlay h1 {
+        .name-header h1 {
             margin: 0;
-            font-size: 2.2em; /* Large on desktop */
+            color: var(--primary-color);
+            font-size: 1.8em; /* Decent size */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            line-height: 1.2;
         }
-        .banner-text-overlay p {
-            margin: 8px 0 0;
-            font-size: 1.1em;
+        .name-header p {
+            margin: 5px 0 0;
+            font-size: 1em;
+            color: #b8860b; /* Gold Subtitle */
             font-weight: 600;
-            color: var(--gold-text); /* Gold color for subtitle */
         }
 
-        /* Ticker back in original place */
+        /* Ticker */
         .news-ticker-container {
             background: linear-gradient(90deg, #b8860b, #e0aa3e, #b8860b);
-            overflow: hidden; white-space: nowrap; padding: 8px 0; position: relative; z-index: 10;
-            border-bottom: 2px solid #fff;
+            overflow: hidden; white-space: nowrap; padding: 6px 0; position: relative; z-index: 10;
         }
         .ticker-text { 
             display: inline-block; color: #000; font-weight: 700; font-size: 0.95em; padding-left: 100%; 
@@ -72,7 +66,7 @@
         }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        .container { max-width: 950px; margin: 0 auto; padding: 30px 20px 40px; }
+        .container { max-width: 950px; margin: 0 auto; padding: 20px 20px 40px; }
         .section-title { text-align: center; color: var(--primary-color); margin-bottom: 30px; font-size: 1.8em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--gold-gradient); margin: 10px auto 0; border-radius: 5px; }
         
@@ -143,13 +137,7 @@
         .honors-list li { padding: 8px 0; border-bottom: 1px solid #dae3e7; font-size: 0.9em; display: flex; align-items: flex-start; }
         .honors-list li::before { content: '🏆'; margin-right: 10px; font-size: 1.1em; color: var(--gold-dark); }
         
-        /* Mobile Optimization for Banner Text */
         @media (max-width: 768px) { 
-            .banner-text-overlay h1 { font-size: 1.5em; }
-            .banner-text-overlay p { font-size: 0.9em; margin-top: 5px; }
-            /* Ensure image has height on mobile so text fits */
-            .main-banner-img { min-height: 180px; object-fit: cover; }
-
             .mission-card { flex-direction: column; text-align: center; } 
             .mission-card .card-img, .mission-card .card-content { width: 100%; text-align: center; } 
             .mission-card .card-img { height: 120px; width: 50%; margin: 0 auto; }
@@ -170,12 +158,13 @@
 <header>
     <div class="banner-container">
         <img src="banner.jpg" alt="Haji Shabbir Ahmed Shigri - Official Banner" class="main-banner-img">
-        <div class="banner-text-overlay">
-            <h1>Haji Shabbir Ahmed Shigri</h1>
-            <p>International Journalist, Media Legend & Cultural Expert</p>
-        </div>
     </div>
 </header>
+
+<div class="name-header">
+    <h1>Haji Shabbir Ahmed Shigri</h1>
+    <p>International Journalist, Media Legend & Cultural Expert</p>
+</div>
 
 <div class="news-ticker-container">
     <div class="ticker-text">
