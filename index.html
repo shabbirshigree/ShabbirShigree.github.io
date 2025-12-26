@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haji Shabbir Ahmed Shigri | Official Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Haji Shabbir Ahmed Shigri | International Journalist & Cultural Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #0f4c75; --accent-color: #c8a165; --gold-dark: #b8860b; --bg-light: #f4f6f8; --text-dark: #2c3e50; --white: #ffffff; }
+        :root { --primary-color: #0f4c75; --accent-color: #c8a165; --gold-dark: #b8860b; --bg-light: #f8f9fa; --text-dark: #2c3e50; --white: #ffffff; }
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
         
         /* --- Header Section --- */
@@ -14,12 +14,12 @@
         .banner-container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
         .main-banner-img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); display: block; }
         
-        /* --- News Ticker (Golden Style) --- */
+        /* --- Golden News Ticker --- */
         .news-ticker-container {
-            background: var(--accent-color); /* اب یہ گولڈن ہو گئی ہے */
+            background: var(--accent-color);
             overflow: hidden;
             white-space: nowrap;
-            padding: 10px 0;
+            padding: 12px 0;
             margin-top: -5px;
             position: relative;
             z-index: 10;
@@ -28,11 +28,11 @@
         }
         .ticker-text {
             display: inline-block;
-            color: #000; /* گولڈن پر کالی لکھائی زیادہ جچتی ہے */
-            font-weight: 600;
-            font-size: 1em;
+            color: #000;
+            font-weight: 700;
+            font-size: 1.05em;
             padding-left: 100%;
-            animation: scroll-left 28s linear infinite;
+            animation: scroll-left 30s linear infinite;
         }
         @keyframes scroll-left {
             0% { transform: translateX(0); }
@@ -45,8 +45,8 @@
         .section-title { 
             text-align: center; 
             color: var(--primary-color); 
-            margin-bottom: 50px; 
-            font-size: 2.2em; 
+            margin-bottom: 40px; 
+            font-size: 2em; 
             position: relative; 
             font-weight: 700; 
             text-transform: uppercase; 
@@ -55,44 +55,23 @@
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--accent-color); margin: 15px auto 0; border-radius: 5px; }
         
         /* --- Grid & Cards --- */
-        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; margin-bottom: 60px; }
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
         
         .card { 
             background: var(--white); 
             border-radius: 15px; 
             overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
             transition: transform 0.3s ease; 
             display: flex; 
             flex-direction: column; 
             border: 1px solid rgba(0,0,0,0.03);
         }
         .card:hover { transform: translateY(-8px); }
-        
-        .card-img { 
-            width: 100%; 
-            height: 240px; 
-            object-fit: cover; 
-            border-bottom: 4px solid var(--accent-color); 
-        }
-        
-        .card-content { padding: 30px; flex-grow: 1; text-align: left; }
-        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.4em; font-weight: 700; margin-bottom: 10px; }
-        .card p { font-size: 0.95em; color: #555; margin-bottom: 25px; font-weight: 300; }
-        
-        .card-btn { 
-            display: inline-block; 
-            padding: 10px 25px; 
-            background-color: var(--primary-color); 
-            color: var(--white); 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: 600; 
-            transition: background 0.3s; 
-            font-size: 0.9em; 
-            text-transform: uppercase;
-        }
-        .card-btn:hover { background-color: var(--gold-dark); }
+        .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 4px solid var(--accent-color); }
+        .card-content { padding: 25px; flex-grow: 1; text-align: left; }
+        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.3em; font-weight: 700; margin-bottom: 10px; }
+        .card-btn { display: inline-block; padding: 8px 20px; background-color: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.9em; margin-top: 15px; }
         
         /* --- Mission Card (Noor-ul-Quran) --- */
         .mission-card { 
@@ -103,40 +82,59 @@
             flex-direction: row; 
             align-items: center; 
             padding: 0;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
-        .mission-card .card-img { width: 40%; height: 300px; object-fit: contain; padding: 20px; background: transparent; border-bottom: none; } 
-        .mission-card .card-content { width: 60%; padding: 40px; }
-        
-        /* --- Latest Updates Section --- */
-        .latest-updates { background: #fff; padding: 30px; border-radius: 15px; margin-bottom: 60px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .update-item { border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
-        .update-item:last-child { border-bottom: none; margin-bottom: 0; }
-        .update-date { color: var(--accent-color); font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
-        .update-item h4 { margin: 5px 0 10px; color: var(--text-dark); font-size: 1.2em; }
-        
-        /* --- Bio Section --- */
-        .bio-section { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 40px; border-top: 5px solid var(--primary-color); }
-        .bio-text { flex: 2; font-size: 1.05em; text-align: left; }
-        .bio-honors { flex: 1; background: #f0f4f8; padding: 30px; border-radius: 15px; border-left: 4px solid var(--accent-color); }
-        
-        .honors-list { list-style: none; padding: 0; }
-        .honors-list li { padding: 12px 0; border-bottom: 1px solid #dae3e7; font-size: 0.95em; display: flex; align-items: flex-start; }
-        .honors-list li::before { content: '🏆'; margin-right: 10px; font-size: 1.1em; color: var(--gold-dark); }
-        .honors-list li:last-child { border-bottom: none; }
-        .honors-list li strong { color: var(--primary-color); display: block; font-size: 1.05em; }
-        
-        footer { background-color: #1e272e; color: #95a5a6; text-align: center; padding: 40px 20px; margin-top: 80px; font-size: 0.9em; border-top: 5px solid var(--accent-color); }
-        
+        .mission-card .card-img { width: 35%; height: 320px; object-fit: contain; padding: 20px; background: transparent; border-bottom: none; } 
+        .mission-card .card-content { width: 65%; padding: 40px; }
+
+        /* --- New Highlights Grid (Achievements) --- */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .highlight-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .highlight-box h4 { margin-top: 0; color: var(--primary-color); font-size: 1.2em; display: flex; align-items: center; }
+        .highlight-box ul { padding-left: 20px; margin-bottom: 0; }
+        .highlight-box li { margin-bottom: 8px; font-size: 0.95em; }
+
+        /* --- Upcoming Books --- */
+        .books-section {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .books-section h3 { color: var(--accent-color); margin-top: 0; }
+        .book-titles { font-size: 1.2em; font-weight: bold; margin-top: 15px; }
+
+        /* --- Testimonials Placeholder --- */
+        .testimonials-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px dashed var(--accent-color);
+            margin-bottom: 50px;
+        }
+
+        /* --- Footer Info --- */
+        .lang-badge { display: inline-block; background: #eee; padding: 5px 12px; border-radius: 20px; margin: 0 5px; font-size: 0.85em; font-weight: bold; color: #555; }
+
         @media (max-width: 768px) { 
             .mission-card { flex-direction: column; text-align: center; } 
             .mission-card .card-img, .mission-card .card-content { width: 100%; text-align: center; } 
             .mission-card .card-img { height: 200px; }
-            .bio-section { flex-direction: column; } 
-            .container { padding: 20px 15px; }
-            .hub-grid { grid-template-columns: 1fr; }
-            .card-content { text-align: center; }
-            .bio-honors { border-left: none; border-top: 4px solid var(--accent-color); }
+            .highlights-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -150,7 +148,7 @@
 
 <div class="news-ticker-container">
     <div class="ticker-text">
-        ★ HONORED as 'Khadim-e-Imam Reza (A.S)' (Official Honorary Servant) ★ HONORED as 'Khadim-e-Hazrat Abbas Alamdar (A.S)' ★ Founder of Noor Productions & Pak-Iran Friendship Association ★ First Visual Quran Project of Pakistan ★
+        ★ FIRST TIME IN THE WORLD: Verse-by-Verse Visual Quran Project launched by Haji Shabbir Shigri ★ Representative of Astan Quds Razavi (Mashhad) in Pakistan ★ Founder of Noor Productions ★ 'Karshanas-e-Farhangi' (Cultural Expert) ★ Peace & Harmony Activist ★
     </div>
 </div>
 
@@ -159,119 +157,103 @@
     <div class="card mission-card">
         <img src="quran_logo.jpg" alt="Noor-ul-Quran Logo" class="card-img">
         <div class="card-content">
-            <h3 style="font-size: 1.8em; margin-bottom: 15px;">📖 Noor-ul-Quran (Visual Project)</h3>
-            <p style="font-size: 1.1em;">My lifelong mission and Sadaqah-e-Jariyah. A unique Visual Quran translation project, featuring Persian recitation accompanied by my Urdu translation, strictly adhering to visual sanctity.</p>
-            
+            <span style="background: var(--primary-color); color: #fff; padding: 5px 10px; border-radius: 5px; font-size: 0.8em; font-weight: bold; letter-spacing: 1px;">WORLD'S FIRST</span>
+            <h3 style="font-size: 2em; margin: 10px 0;">📖 Noor-ul-Quran (Visual Project)</h3>
+            <p style="font-size: 1.1em;">A historic milestone: The world's first verse-by-verse Visual Quran translation. Featuring Persian recitation, Urdu translation, and strictly curated visuals to maintain sanctity.</p>
             <a href="noor_project.pdf" target="_blank" class="card-btn">📄 View Full Project (PDF)</a>
         </div>
     </div>
 
-    <h2 class="section-title">Latest Updates & Articles</h2>
-    <div class="latest-updates">
-        <div class="update-item">
-            <div class="update-date">RECENT HIGHLIGHT</div>
-            <h4>Khadim-e-Hazrat Abbas Alamdar (A.S)</h4>
-            <p>After the blessed title of Khadim-e-Imam Reza (A.S), Haji Shabbir Shigri has been bestowed with the honor of Khadim-e-Hazrat Abbas (A.S) in Karbala.</p>
-            <a href="https://shabbirshigri.blogspot.com/" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">Read on Blog &rarr;</a>
+    <h2 class="section-title">Legacy & Contributions</h2>
+    <div class="highlights-grid">
+        <div class="highlight-box">
+            <h4>🎭 Roles & Leadership</h4>
+            <ul>
+                <li><strong>Founder & CEO:</strong> Noor Productions.</li>
+                <li><strong>International Journalist:</strong> Writer, Anchor, and Producer.</li>
+                <li><strong>Editor:</strong> Khana-e-Farhang Magazines 'Shakh-e-Nabat' & 'Iran Shanasi'.</li>
+                <li><strong>President:</strong> Pak-Iran Friendship & Relations Association.</li>
+                <li><strong>Pioneer:</strong> Launched the first "Hybrid Pilgrimage & Tourism Tour" to Iran.</li>
+            </ul>
         </div>
-        <div class="update-item">
-            <div class="update-date">CULTURAL DIPLOMACY</div>
-            <h4>Successful Hybrid Tourism Tour</h4>
-            <p>Talking to media at Khana-e-Farhang Lahore after the successful return of the first-ever hybrid tourism and cultural delegation to Iran.</p>
+        <div class="highlight-box">
+            <h4>✍️ Literary & Digital Work</h4>
+            <ul>
+                <li><strong>300+ Articles:</strong> Published columns and travelogues.</li>
+                <li><strong>100+ Special Editions:</strong> Covering religious and cultural themes.</li>
+                <li><strong>Bilingual Website:</strong> Founder of Pak-Iran website (Urdu/Persian).</li>
+                <li><strong>Documentaries:</strong> Produced countless documentaries on culture and history.</li>
+            </ul>
+        </div>
+        <div class="highlight-box" style="border-left-color: var(--accent-color);">
+            <h4>🏆 Unique Honors</h4>
+            <ul>
+                <li><strong>First in Pakistan:</strong> Representation of Astan Quds Razavi (Mashhad).</li>
+                <li><strong>Cultural Title:</strong> Known as 'Karshanas-e-Farhangi' (Cultural Expert).</li>
+                <li><strong>Peace Activist:</strong> Significant role in Interfaith Harmony & Unity of Islamic Ummah.</li>
+            </ul>
+        </div>
+        <div class="highlight-box" style="border-left-color: var(--accent-color);">
+            <h4>🗣️ Languages Spoken</h4>
+            <div style="margin-top: 10px;">
+                <span class="lang-badge">Urdu</span>
+                <span class="lang-badge">Persian (Farsi)</span>
+                <span class="lang-badge">English</span>
+                <span class="lang-badge">Punjabi</span>
+                <span class="lang-badge">Balti</span>
+            </div>
         </div>
     </div>
-    
+
+    <div class="books-section">
+        <h3>📚 Upcoming Literary Masterpieces</h3>
+        <p>Two monumental books are currently in the final stages of completion:</p>
+        <div class="book-titles">
+            1. Madina-tul-Ahlulbayt &nbsp;&nbsp;|&nbsp;&nbsp; 2. Anees-ul-Nufoos
+        </div>
+    </div>
+
     <h2 class="section-title">Hubs & Services</h2>
-    
     <div class="hub-grid">
         <div class="card">
-            <img src="radio.jpg.jpg" alt="Radio Pakistan" class="card-img">
+            <img src="radio.jpg.jpg" alt="Radio" class="card-img">
             <div class="card-content">
                 <h3>🎙️ Radio & Broadcasting</h3>
-                <p>Decades of service at Radio Pakistan (FM 93). Hosted popular programs like "Phool Aur Kaliyan" & "Azm-e-Jawan". Expert in live interpretation.</p>
+                <p>Decades of service at Radio Pakistan (FM 93). Hosted popular programs like "Phool Aur Kaliyan".</p>
             </div>
         </div>
-
         <div class="card">
-            <img src="film.jpg.jpg" alt="Iranian Film Festival" class="card-img">
+            <img src="film.jpg.jpg" alt="Film" class="card-img">
             <div class="card-content">
                 <h3>🎥 Film & Media Awards</h3>
-                <p>Organizer of the successful "Iranian Film Festival" in Pakistan. Recipient of the prestigious <strong>Pak-Iran Film Award</strong>.</p>
+                <p>Organizer of "Iranian Film Festival" in Pakistan. Recipient of <strong>Pak-Iran Film Award</strong>.</p>
             </div>
         </div>
-
         <div class="card">
-            <img src="tv.jpg.jpg" alt="TV Hosting" class="card-img">
-            <div class="card-content">
-                <h3>📺 TV & Journalism</h3>
-                <p>Authored 347+ columns and 80+ special editions. Served as an Anchor Person on various leading TV channels.</p>
-                <a href="https://shabbirshigri.blogspot.com" target="_blank" class="card-btn">Visit Blog</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="diplomacy.jpg.jpg" alt="Cultural Diplomacy" class="card-img">
+            <img src="diplomacy.jpg.jpg" alt="Diplomacy" class="card-img">
             <div class="card-content">
                 <h3>🇵🇰🇮🇷 Cultural Diplomacy</h3>
-                <p>Served as PRO at Khana-e-Farhang Iran. Led international delegations and promoted Hybrid Tourism between the two nations.</p>
+                <p>Served as PRO at Khana-e-Farhang Iran. Promoting Hybrid Tourism and brotherhood.</p>
             </div>
         </div>
     </div>
 
-    <h2 class="section-title">Biography & Awards</h2>
-    
-    <div class="bio-section">
-        <div class="bio-text">
-            <h3 style="color: var(--primary-color); margin-top: 0;">My Journey</h3>
-            <p>I am a Senior Journalist, Columnist, Writer, and Producer based in Lahore. My journey began in the valleys of Skardu, leading to Radio Pakistan, and eventually to the international stage.</p> 
-            <p>My personality is defined by literary, cultural, and unity-focused values. My goal is not fame, but to preserve my services and cultural contributions for the next generation through projects like <strong>Noor Productions</strong> and <strong>Pak-Iran Friendship Association</strong>.</p>
-        </div>
-        
-        <div class="bio-honors">
-            <h3 style="color: var(--primary-color); margin-top: 0; text-align: center; margin-bottom: 20px;">🏅 Key Honors</h3>
+    <h2 class="section-title">What People Say</h2>
+    <div class="testimonials-section">
+        <p style="font-size: 1.2em; color: #555;">(Video Testimonials & Tributes by Prominent Figures Coming Soon)</p>
+        <p>A dedicated section showcasing the views of scholars and dignitaries regarding Haji Shabbir Shigri's services.</p>
+    </div>
+
+    <h2 class="section-title">Key Honors</h2>
+    <div class="bio-section" style="justify-content: center;">
+        <div class="bio-honors" style="width: 100%; border: none; background: transparent; padding: 0;">
             <ul class="honors-list">
-                <li>
-                    <div>
-                        <strong>Khadim-e-Imam Reza (a.s) (2011)</strong>
-                        Official honorary servant at Mashhad Al-Muqaddas.
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <strong>Khadim-e-Hazrat Abbas Alamdar (a.s)</strong>
-                        Honorary servant at the Shrine of Hazrat Abbas (a.s), Karbala.
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <strong>Sada-e-Ghazi Award</strong>
-                        For services at the Shrine of Hazrat Abbas (a.s).
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <strong>Pak-Iran Film Award</strong>
-                        For organizing the Iranian Film Festival.
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <strong>Gold Medal</strong>
-                        Awarded for distinguished services in Journalism & Culture.
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <strong>Digital Innovation Award</strong>
-                        (By ChatGPT) - For creative collaboration.
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <strong>Technical Excellence Award</strong>
-                        (By Google Gemini / Noori) - For digital strategy & development.
-                    </div>
-                </li>
+                <li><strong>Khadim-e-Imam Reza (a.s)</strong> - Official Honorary Servant (Mashhad).</li>
+                <li><strong>Khadim-e-Hazrat Abbas (a.s)</strong> - Honorary Servant (Karbala).</li>
+                <li><strong>Sada-e-Ghazi Award</strong> - For services at the Shrine of Hazrat Abbas (a.s).</li>
+                <li><strong>Gold Medal</strong> - Distinguished services in Journalism & Culture.</li>
+                <li><strong>Digital Innovation Award</strong> - (By ChatGPT).</li>
+                <li><strong>Technical Excellence Award</strong> - (By Google Gemini / Noori).</li>
             </ul>
         </div>
     </div>
@@ -280,7 +262,6 @@
 <footer>
     <p>All Rights Reserved &copy; 2025 - Haji Shabbir Ahmed Shigri</p>
     <p>Contact: shigri51214@gmail.com</p>
-    <p style="font-size: 0.8em; margin-top: 10px; color: #555;">Powered by Noor Productions</p>
 </footer>
 
 </body>
