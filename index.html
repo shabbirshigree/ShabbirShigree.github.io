@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,26 +14,28 @@
         .banner-container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
         .main-banner-img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); display: block; }
         
-        /* --- News Ticker (New Addition) --- */
-        .news-ticker {
+        /* --- News Ticker (Moving Text) --- */
+        .news-ticker-container {
             background: var(--primary-color);
-            color: #fff;
-            padding: 10px 0;
             overflow: hidden;
             white-space: nowrap;
-            margin-top: -5px; /* Adjust to fit under banner or header */
+            padding: 8px 0;
+            margin-top: -5px;
             position: relative;
             z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .ticker-content {
+        .ticker-text {
             display: inline-block;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.9em;
             padding-left: 100%;
-            animation: ticker 30s linear infinite;
-            font-size: 0.95em;
+            animation: scroll-left 25s linear infinite;
         }
-        @keyframes ticker {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-100%, 0, 0); }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
         }
 
         /* --- Layout --- */
@@ -59,12 +61,12 @@
             border-radius: 15px; 
             overflow: hidden; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            transition: transform 0.3s ease; 
             display: flex; 
             flex-direction: column; 
             border: 1px solid rgba(0,0,0,0.03);
         }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+        .card:hover { transform: translateY(-8px); }
         
         .card-img { 
             width: 100%; 
@@ -88,7 +90,6 @@
             transition: background 0.3s; 
             font-size: 0.9em; 
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
         .card-btn:hover { background-color: var(--accent-color); }
         
@@ -106,11 +107,11 @@
         .mission-card .card-img { width: 40%; height: 300px; object-fit: contain; padding: 20px; background: transparent; border-bottom: none; } 
         .mission-card .card-content { width: 60%; padding: 40px; }
         
-        /* --- Blog / Latest Updates Section (New) --- */
+        /* --- Latest Updates Section --- */
         .latest-updates { background: #fff; padding: 30px; border-radius: 15px; margin-bottom: 60px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
         .update-item { border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
         .update-item:last-child { border-bottom: none; margin-bottom: 0; }
-        .update-date { color: var(--accent-color); font-size: 0.85em; font-weight: bold; }
+        .update-date { color: var(--accent-color); font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
         .update-item h4 { margin: 5px 0 10px; color: var(--text-dark); font-size: 1.2em; }
         
         /* --- Bio Section --- */
@@ -146,9 +147,9 @@
     </div>
 </header>
 
-<div class="news-ticker">
-    <div class="ticker-content">
-        ★ HONORED as 'Khadim-e-Hazrat Abbas (A.S)' after Imam Reza (A.S) ★ Successful completion of First Cultural & Pilgrimage Tour to Iran ★ Founder of Noor Productions & Pak-Iran Friendship Association ★
+<div class="news-ticker-container">
+    <div class="ticker-text">
+        ★ HONORED as 'Khadim-e-Hazrat Abbas (A.S)' after Imam Reza (A.S) ★ Successful completion of First Cultural & Pilgrimage Tour to Iran ★ Founder of Noor Productions & Pak-Iran Friendship Association ★ Gold Medalist Senior Journalist ★
     </div>
 </div>
 
@@ -167,15 +168,15 @@
     <h2 class="section-title">Latest Updates & Articles</h2>
     <div class="latest-updates">
         <div class="update-item">
-            <div class="update-date">RECENT HIGHLIGHT</div>
-            <h4>Honored as 'Servant of Hazrat Abbas (A.S)'</h4>
-            <p>After the blessed title of Khadim-e-Imam Reza (A.S), Haji Shabbir Shigri has been bestowed with the honor of Khadim-e-Hazrat Abbas Alamdar (A.S) in Karbala. A moment of immense gratitude.</p>
+            <div class="update-date">RECENT HONOR</div>
+            <h4>Khadim-e-Hazrat Abbas Alamdar (A.S)</h4>
+            <p>After the blessed title of Khadim-e-Imam Reza (A.S), Haji Shabbir Shigri has been bestowed with the honor of Khadim-e-Hazrat Abbas (A.S) in Karbala.</p>
             <a href="https://shabbirshigri.blogspot.com/" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">Read on Blog &rarr;</a>
         </div>
         <div class="update-item">
             <div class="update-date">CULTURAL DIPLOMACY</div>
-            <h4>Successful Cultural Tour to Iran</h4>
-            <p>Talking to media at Khana-e-Farhang Lahore after the successful return of the first-ever hybrid tourism and cultural delegation to Iran, promoting unity and brotherhood.</p>
+            <h4>Successful Hybrid Tourism Tour</h4>
+            <p>Talking to media at Khana-e-Farhang Lahore after the successful return of the first-ever hybrid tourism and cultural delegation to Iran.</p>
         </div>
     </div>
     
