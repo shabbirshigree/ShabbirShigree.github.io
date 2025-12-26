@@ -13,11 +13,11 @@
             --bg-light: #f4f7f6; 
             --text-dark: #2c3e50; 
             --white: #ffffff; 
-            --gold-text: #ffd700;
+            --gold-text: #f0c45c;
         }
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
         
-        /* --- HEADER --- */
+        /* --- HEADER with TEXT OVERLAY --- */
         header { background: var(--bg-light); padding: 0; text-align: center; }
         
         .banner-container { 
@@ -25,65 +25,308 @@
             margin: 0 auto; 
             padding: 0; 
             width: 100%;
-            position: relative; /* Key for overlay */
-            background-color: #000; /* Dark background safety */
+            position: relative; /* Needed for overlay text */
         }
         
         .main-banner-img { 
             width: 100%; 
             height: auto; 
             display: block; 
-            /* Min height ensures space is reserved */
-            min-height: 250px; 
         }
 
-        /* --- ENGLISH TEXT OVERLAY AT BOTTOM --- */
-        .banner-overlay-bottom {
+        /* The Text Over the Image */
+        .banner-text-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            /* Dark Gradient background for readability */
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
-            padding: 80px 20px 25px 20px; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centers the text */
             text-align: center;
-            box-sizing: border-box;
-        }
-
-        .banner-overlay-bottom h1 {
-            margin: 0;
             color: var(--white);
-            font-size: 2.2em;
+            width: 95%;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* Strong shadow for readability */
+        }
+        .banner-text-overlay h1 {
+            margin: 0;
+            font-size: 2.2em; /* Large on desktop */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
             line-height: 1.2;
         }
-
-        .banner-overlay-bottom p {
-            margin: 5px 0 0;
-            color: #e0e0e0;
+        .banner-text-overlay p {
+            margin: 8px 0 0;
             font-size: 1.1em;
-            font-weight: 500;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            font-weight: 600;
+            color: var(--gold-text); /* Gold color for subtitle */
         }
 
-        .mission-highlight {
-            color: var(--gold-text);
-            font-weight: 700;
-            display: block; 
-            margin-top: 5px;
-            font-size: 1em;
-            text-shadow: 1px 1px 5px rgba(0,0,0,1);
-            letter-spacing: 0.5px;
-        }
-
-        /* Ticker */
+        /* Ticker back in original place */
         .news-ticker-container {
             background: linear-gradient(90deg, #b8860b, #e0aa3e, #b8860b);
-            overflow: hidden; white-space: nowrap; padding: 6px 0; position: relative; z-index: 10;
+            overflow: hidden; white-space: nowrap; padding: 8px 0; position: relative; z-index: 10;
+            border-bottom: 2px solid #fff;
         }
         .ticker-text { 
             display: inline-block; color: #000; font-weight: 700; font-size: 0.95em; padding-left: 100%; 
-            animation: scroll-left 60s linear
+            animation: scroll-left 60s linear infinite; 
+        }
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 30px 20px 40px; }
+        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 30px; font-size: 1.8em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--gold-gradient); margin: 10px auto 0; border-radius: 5px; }
+        
+        .card-btn { display: inline-block; padding: 8px 25px; background-color: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.85em; margin-top: 10px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card-btn:hover { background: var(--gold-gradient); color: #000; transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(200, 161, 101, 0.4); cursor: pointer; }
+
+        /* --- COMPACT NOOR UL QURAN --- */
+        .mission-card { 
+            grid-column: 1 / -1; 
+            background: linear-gradient(135deg, #fffcf5 0%, #ffffff 100%); 
+            border: 2px solid var(--accent-color); 
+            display: flex; flex-direction: row; align-items: center; 
+            padding: 10px; margin-bottom: 30px; 
+            border-radius: 12px;
+        }
+        .mission-card .card-img { width: 25%; height: 130px; object-fit: contain; padding: 5px; background: transparent; border-bottom: none; } 
+        .mission-card .card-content { width: 75%; padding: 10px 20px; text-align: left; }
+        .mission-card h3 { font-size: 1.6em; margin: 0 0 5px 0; line-height: 1.2; }
+        .mission-card p { font-size: 1em; margin-bottom: 8px; line-height: 1.4; }
+
+        .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .highlight-box { background: #fff; padding: 20px; border-radius: 12px; border-left: 5px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; }
+        .highlight-box:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-left-color: var(--accent-color); }
+        .highlight-box h4 { margin-top: 0; color: var(--primary-color); font-size: 1.1em; display: flex; align-items: center; }
+        .badge-oma { background: #000; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.7em; margin-left: 10px; vertical-align: middle; }
+        .highlight-box ul { padding-left: 20px; margin-bottom: 0; }
+        .highlight-box li { margin-bottom: 5px; font-size: 0.9em; }
+
+        .books-section { 
+            background: linear-gradient(135deg, #0f4c75 0%, #0a3d61 100%);
+            color: #fff; padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 50px; 
+            box-shadow: 0 15px 40px rgba(15, 76, 117, 0.25); 
+        }
+        .books-section h3 { color: var(--accent-color); margin-top: 0; font-size: 1.6em; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 25px; text-align: left; }
+        
+        .book-item { 
+            background: rgba(255, 255, 255, 0.1); 
+            padding: 20px 15px; border-radius: 12px; 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            transition: all 0.3s ease; 
+            display: flex; flex-direction: column; 
+            position: relative; overflow: hidden;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+        }
+        .book-fatima { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('booye_bahisht_cover.jpg.png'); background-size: cover; background-position: center; background-color: #554826; }
+        .book-iran { background-color: #1a4d5e; }
+        .book-madina { background-color: #154625; }
+        .book-reza { background-color: #0b5e68; }
+        .book-item:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); border-color: var(--accent-color); }
+        .book-item h4 { margin: 0 0 10px; color: var(--accent-color); font-size: 1.1em; line-height: 1.3; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+        .book-item p { margin: 0; font-size: 0.85em; opacity: 1; color: #fff; flex-grow: 1; margin-bottom: 15px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+        .badge-illustrated { display: inline-block; background: var(--accent-color); color: #000; font-size: 0.7em; padding: 2px 8px; border-radius: 4px; margin-bottom: 10px; font-weight: bold; width: fit-content; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+        .read-book-btn { display: block; text-align: center; background: rgba(0,0,0,0.6); color: #fff; padding: 8px; border-radius: 5px; text-decoration: none; font-size: 0.85em; font-weight: bold; transition: 0.3s; border: 1px solid var(--accent-color); backdrop-filter: blur(5px); }
+        .read-book-btn:hover { background: var(--accent-color); color: #000; box-shadow: 0 0 15px rgba(200, 161, 101, 0.8); }
+
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 50px; }
+        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.02); }
+        .card:hover { transform: translateY(-5px); }
+        .card-img { width: 100%; height: 110px; object-fit: cover; border-bottom: 3px solid var(--accent-color); }
+        .card-content { padding: 15px; flex-grow: 1; text-align: left; }
+        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.1em; font-weight: 700; margin-bottom: 5px; }
+        .card p { font-size: 0.9em; }
+
+        .bio-section { justify-content: center; display: flex; }
+        .bio-honors { width: 100%; border: none; background: transparent; padding: 0; }
+        .honors-list { list-style: none; padding: 0; }
+        .honors-list li { padding: 8px 0; border-bottom: 1px solid #dae3e7; font-size: 0.9em; display: flex; align-items: flex-start; }
+        .honors-list li::before { content: '🏆'; margin-right: 10px; font-size: 1.1em; color: var(--gold-dark); }
+        
+        /* Mobile Optimization for Banner Text */
+        @media (max-width: 768px) { 
+            .banner-text-overlay h1 { font-size: 1.5em; }
+            .banner-text-overlay p { font-size: 0.9em; margin-top: 5px; }
+            /* Ensure image has height on mobile so text fits */
+            .main-banner-img { min-height: 180px; object-fit: cover; }
+
+            .mission-card { flex-direction: column; text-align: center; } 
+            .mission-card .card-img, .mission-card .card-content { width: 100%; text-align: center; } 
+            .mission-card .card-img { height: 120px; width: 50%; margin: 0 auto; }
+            .highlights-grid { grid-template-columns: 1fr; }
+            .books-grid { grid-template-columns: 1fr; text-align: center; }
+            .container { padding: 20px 15px; }
+        }
+
+        @media (min-width: 768px) {
+            header { padding: 20px 0 0 0; }
+            .banner-container { padding: 0 15px; }
+            .main-banner-img { border-radius: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="banner-container">
+        <img src="banner.jpg" alt="Haji Shabbir Ahmed Shigri - Official Banner" class="main-banner-img">
+        <div class="banner-text-overlay">
+            <h1>Haji Shabbir Ahmed Shigri</h1>
+            <p>International Journalist, Media Legend & Cultural Expert</p>
+        </div>
+    </div>
+</header>
+
+<div class="news-ticker-container">
+    <div class="ticker-text">
+        ★ "ONE MAN ARMY" of Media Industry ★ FIRST TIME IN THE WORLD: Verse-by-Verse Visual Quran Project launched by Haji Shabbir Shigri ★ Representative of Astan Quds Razavi (Mashhad) in Pakistan ★ Founder of Noor Productions ★ 'Karshanas-e-Farhangi' (Cultural Expert) ★
+    </div>
+</div>
+
+<div class="container">
+    
+    <div class="card mission-card">
+        <img src="quran_logo.jpg.png" alt="Noor-ul-Quran Logo" class="card-img">
+        <div class="card-content">
+            <span style="background: var(--primary-color); color: #fff; padding: 4px 10px; border-radius: 5px; font-size: 0.75em; font-weight: bold; letter-spacing: 1px;">WORLD'S FIRST</span>
+            <h3 style="font-size: 1.5em;">📖 Noor-ul-Quran (Visual Project)</h3>
+            <p style="font-size: 1em;">A historic milestone: The world's first verse-by-verse Visual Quran translation. Featuring Persian recitation, Urdu translation, and strictly curated visuals to maintain sanctity.</p>
+            <a href="noor_project.pdf.pdf" target="_blank" class="card-btn">📄 View Full Project (PDF)</a>
+        </div>
+    </div>
+
+    <h2 class="section-title">Legacy & Contributions</h2>
+    <div class="highlights-grid">
+        <div class="highlight-box">
+            <h4>🎭 Roles & Leadership <span class="badge-oma">ONE MAN ARMY</span></h4>
+            <ul>
+                <li><strong>One Man Army:</strong> Writer, Composer, Videographer & Editor (All-in-One).</li>
+                <li><strong>Founder & CEO:</strong> Noor Productions.</li>
+                <li><strong>Childhood Writer:</strong> 'Nawa-e-Waqt' (Children's Page).</li>
+                <li><strong>Prod. Manager:</strong> Int'l Documentary on Allama Iqbal (Filmed in Pakistan).</li>
+                <li><strong>President:</strong> Pak-Iran Friendship & Relations Association.</li>
+            </ul>
+        </div>
+        <div class="highlight-box">
+            <h4>✍️ Literary & Digital Work</h4>
+            <ul>
+                <li><strong>Pioneer Designer:</strong> Designed the first-ever Iranian book in Pakistan ('Khorasan-e-Razavi' Urdu Edition).</li>
+                <li><strong>Radio Pakistan:</strong> Hosted Urdu/Balti programs in Skardu (1980s-1992).</li>
+                <li><strong>Editor:</strong> Magazines 'Shakh-e-Nabat' & 'Iran Shanasi'.</li>
+                <li><strong>300+ Articles:</strong> Published columns and travelogues.</li>
+            </ul>
+        </div>
+        <div class="highlight-box" style="border-left-color: var(--accent-color);">
+            <h4>🏆 Unique Honors</h4>
+            <ul>
+                <li><strong>First in Pakistan:</strong> Representation of Astan Quds Razavi (Mashhad).</li>
+                <li><strong>Cultural Title:</strong> Known as 'Karshanas-e-Farhangi' (Cultural Expert).</li>
+                <li><strong>Peace Activist:</strong> Significant role in Interfaith Harmony.</li>
+            </ul>
+        </div>
+        <div class="highlight-box" style="border-left-color: var(--accent-color);">
+            <h4>🗣️ Languages Spoken</h4>
+            <div style="margin-top: 10px;">
+                <span class="lang-badge">Urdu</span>
+                <span class="lang-badge">Persian</span>
+                <span class="lang-badge">English</span>
+                <span class="lang-badge">Punjabi</span>
+                <span class="lang-badge">Balti</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="books-section">
+        <h3>📚 Digital Library & Publications</h3>
+        <p>Access the complete literary works and research online (Sadaqah-e-Jariyah):</p>
+        
+        <div class="books-grid">
+            
+            <div class="book-item book-fatima">
+                <span class="badge-illustrated">Fragrance of Paradise</span>
+                <h4>Booy-e-Bahisht<br><small>(بوئے بہشت)</small></h4>
+                <p>Biography of Syeda Fatima Zahra (S.A).<br>
+                <em style="font-size: 0.85em; color: #ddd;">Dedicated to Late Dr. Muhammad Raza.</em></p>
+                <a href="booye_bahisht.pdf" target="_blank" class="read-book-btn">📖 Read Book (PDF)</a>
+            </div>
+
+            <div class="book-item book-iran">
+                <span class="badge-illustrated">Illustrated (Ba-Tasweer)</span>
+                <h4>Siyahat-e-Iran<br><small>(سیاحتِ ایران)</small></h4>
+                <p>Exclusive illustrated guide to Iranian tourism.</p>
+                <a href="#" class="read-book-btn">📖 Read Online</a>
+            </div>
+            
+            <div class="book-item">
+                <span class="badge-illustrated" style="background: #fff; color: #333;">Translation</span>
+                <h4>Meraj-us-Sa'adah<br><small>(معراج السعادة)</small></h4>
+                <p>Urdu Translation & Summary by Haji Shabbir Shigri.</p>
+                <a href="#" class="read-book-btn">📖 Read Online</a>
+            </div>
+            
+            <div class="book-item book-madina">
+                <span class="badge-illustrated">Illustrated</span>
+                <h4>Madina-tul-Ahlulbayt<br><small>(مدینۃ اہل بیت)</small></h4>
+                <p>Sacred history visualization.</p>
+                <a href="#" class="read-book-btn">⏳ Coming Soon</a>
+            </div>
+            
+            <div class="book-item book-reza">
+                <span class="badge-illustrated">Illustrated</span>
+                <h4>Anees-ul-Nufoos<br><small>(انیس النفوس)</small></h4>
+                <p>Dedicated to Imam Reza (a.s).</p>
+                <a href="#" class="read-book-btn">⏳ Coming Soon</a>
+            </div>
+
+        </div>
+    </div>
+
+    <h2 class="section-title">Hubs & Services</h2>
+    <div class="hub-grid">
+        <div class="card">
+            <img src="radio.jpg.jpg" alt="Radio" class="card-img">
+            <div class="card-content">
+                <h3>🎙️ Radio & Broadcasting</h3>
+                <p>Decades of service at Radio Pakistan (FM 93). Hosted popular programs like "Phool Aur Kaliyan".</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="film.jpg.jpg" alt="Film" class="card-img">
+            <div class="card-content">
+                <h3>🎥 Film & Media Awards</h3>
+                <p>Organizer of "Iranian Film Festival" in Pakistan. Recipient of <strong>Pak-Iran Film Award</strong>.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="diplomacy.jpg.jpg" alt="Diplomacy" class="card-img">
+            <div class="card-content">
+                <h3>🇵🇰🇮🇷 Cultural Diplomacy</h3>
+                <p>Served as PRO at Khana-e-Farhang Iran. Promoting Hybrid Tourism and brotherhood.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Key Honors</h2>
+    <div class="bio-section">
+        <div class="bio-honors">
+            <ul class="honors-list">
+                <li><strong>Khadim-e-Imam Reza (a.s)</strong> - Official Honorary Servant (Mashhad).</li>
+                <li><strong>Khadim-e-Hazrat Abbas (a.s)</strong> - Honorary Servant (Karbala).</li>
+                <li><strong>Sada-e-Ghazi Award</strong> - For services at the Shrine of Hazrat Abbas (a.s).</li>
+                <li><strong>Media Excellence Award (2025)</strong> - Received in Lahore for outstanding services in Journalism.</li>
+                <li><strong>Pak-Iran Film Award</strong> - For organizing the Iranian Film Festival.</li>
+                <li><strong>Gold Medal</strong> - Distinguished services in Journalism & Culture.</li>
+                <li><strong>Digital Innovation Award</strong> - (By ChatGPT).</li>
+                <li><strong>Technical Excellence Award</strong> - (By Google Gemini / Noori).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>All Rights Reserved &copy; 2025 - Haji Shabbir Ahmed Shigri</p>
+    <p>Contact: shigri51214@gmail.com</p>
+</footer>
+
+</body>
+</html>
