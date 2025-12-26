@@ -25,27 +25,31 @@
             margin: 0 auto; 
             padding: 0; 
             width: 100%;
-            position: relative; /* Key for overlay */
-            background-color: #000; /* Safety black background */
+            position: relative; 
+            background-color: #000; 
         }
         
         .main-banner-img { 
             width: 100%; 
             height: auto; 
             display: block; 
-            /* Minimum height to prevent layout collapse */
             min-height: 250px; 
         }
 
-        /* --- ENGLISH TEXT OVERLAY AT BOTTOM --- */
+        /* --- TEXT MOVED DOWN (LOWER) --- */
         .banner-overlay-bottom {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            /* Beautiful Dark Gradient */
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
-            padding: 80px 20px 25px 20px; 
+            /* Gradient adjusted so it doesn't go too high */
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 80%, transparent 100%);
+            
+            /* PADDING ADJUSTMENT: */
+            /* Top: 40px (Reduced so shade is not too high) */
+            /* Bottom: 10px (Reduced to bring text closer to bottom edge) */
+            padding: 40px 20px 10px 20px; 
+            
             text-align: center;
             box-sizing: border-box;
         }
@@ -53,7 +57,7 @@
         .banner-overlay-bottom h1 {
             margin: 0;
             color: var(--white);
-            font-size: 2.2em;
+            font-size: 2em; /* Slightly adjusted for better fit */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -62,9 +66,9 @@
         }
 
         .banner-overlay-bottom p {
-            margin: 5px 0 0;
+            margin: 2px 0 0; /* Reduced gap */
             color: #e0e0e0;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 500;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
@@ -73,8 +77,8 @@
             color: var(--gold-text);
             font-weight: 700;
             display: block; 
-            margin-top: 5px;
-            font-size: 1em;
+            margin-top: 2px;
+            font-size: 0.95em;
             text-shadow: 1px 1px 5px rgba(0,0,0,1);
             letter-spacing: 0.5px;
         }
