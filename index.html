@@ -9,32 +9,27 @@
         :root { --primary-color: #0f4c75; --accent-color: #c8a165; --bg-light: #f4f7f6; --text-dark: #333; --white: #ffffff; }
         body { font-family: 'Noto Nastaliq Urdu', 'Arial', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; }
         
-        /* --- نیا ہیڈر اسٹائل --- */
+        /* --- ہیڈر اسٹائل --- */
         header { 
-            background: var(--bg-light); /* سادہ بیک گراؤنڈ */
-            padding: 20px 0 0 0; /* اوپر سے تھوڑا فاصلہ */
+            background: var(--bg-light); 
+            padding: 20px 0 0 0; 
             text-align: center;
         }
-
-        /* بینر تصویر کا کنٹینر - تاکہ تصویر سینٹر میں رہے */
         .banner-container {
-            max-width: 1100px; /* باقی سائٹ کے برابر چوڑائی */
+            max-width: 1100px; 
             margin: 0 auto;
-            padding: 0 15px; /* موبائل پر سائیڈوں سے فاصلہ */
+            padding: 0 15px; 
         }
-
-        /* اصلی بینر تصویر کی سیٹنگ */
         .main-banner-img {
-            width: 100%; /* تصویر پوری چوڑائی میں پھیلے گی */
-            height: auto; /* اونچائی خود بخود سیٹ ہوگی تاکہ تصویر پچکے نہیں */
-            border-radius: 15px; /* خوبصورت گول کونے */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* ابھرواں نظر آنے کے لیے سایہ */
+            width: 100%; 
+            height: auto; 
+            border-radius: 15px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
             display: block;
         }
-        /* --- ہیڈر اسٹائل ختم --- */
+        /* --- ہیڈر ختم --- */
         
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        
         .section-title { text-align: center; color: var(--primary-color); margin-bottom: 40px; font-size: 1.8em; position: relative; font-weight: 700; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--accent-color); margin: 10px auto 0; border-radius: 2px; }
         
@@ -48,8 +43,10 @@
         .card-btn { display: block; padding: 8px 0; background-color: var(--primary-color); color: var(--white); text-align: center; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; margin-top: auto; font-size: 0.9em; }
         .card-btn:hover { background-color: var(--accent-color); }
         
+        /* مشن کارڈ (نور القرآن) کی سیٹنگ */
         .mission-card { grid-column: 1 / -1; background: linear-gradient(to right, #fffcf5, #fff); border-top: 4px solid var(--accent-color); border-bottom: none; display: flex; flex-direction: row; align-items: center; }
-        .mission-card .card-img { width: 35%; height: 220px; } 
+        /* لوگو کو پورا دکھانے کے لیے object-fit تبدیل کیا ہے */
+        .mission-card .card-img { width: 35%; height: 220px; object-fit: contain; padding: 10px; background: #fff; } 
         .mission-card .card-content { width: 65%; }
         
         .bio-section { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-wrap: wrap; gap: 25px; }
@@ -75,14 +72,15 @@
     <div class="banner-container">
         <img src="banner.jpg" alt="حاجی شبیر احمد شگری - آفیشل بینر" class="main-banner-img">
     </div>
-    </header>
+</header>
 <div class="container">
     <div class="card mission-card" style="margin-bottom: 40px;">
-        <img src="سفارت کاری.jpg.jpg" alt="Mission" class="card-img">
+        <img src="quran_logo.jpg" alt="Noor-ul-Quran Logo" class="card-img">
         <div class="card-content">
             <h3>📖 نور القرآن (ویژول پراجیکٹ)</h3>
             <p>میرا سب سے اہم مشن اور صدقہ جاریہ۔ قرآن پاک کا ویڈیو ترجمہ، جس میں ایرانی قاری کی تلاوت کے ساتھ میرا اردو ترجمہ شامل ہے۔</p>
-            <a href="#" class="card-btn">پراجیکٹ کی تفصیلات</a>
+            
+            <a href="noor_project.pdf" target="_blank" class="card-btn">📄 مکمل پراجیکٹ (PDF) ڈاؤنلوڈ کریں</a>
         </div>
     </div>
     <h2 class="section-title">مرکزی گوشے اور خدمات</h2>
