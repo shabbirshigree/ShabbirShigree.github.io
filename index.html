@@ -8,35 +8,64 @@
     <style>
         :root { --primary-color: #0f4c75; --accent-color: #c8a165; --bg-light: #f4f7f6; --text-dark: #333; --white: #ffffff; }
         body { font-family: 'Noto Nastaliq Urdu', 'Arial', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; }
-        header { background: linear-gradient(rgba(15, 76, 117, 0.95), rgba(10, 46, 71, 0.95)), url('سفارت کاری.jpg.jpg'); background-size: cover; background-position: center; color: var(--white); text-align: center; padding: 80px 20px; }
-        .profile-pic { width: 170px; height: 170px; border-radius: 50%; border: 5px solid var(--accent-color); object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
-        h1 { margin: 10px 0 5px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .tagline { font-size: 1.2em; color: #dbe9f1; margin-bottom: 20px; }
-        .header-mission { background-color: rgba(200, 161, 101, 0.2); padding: 10px 25px; border-radius: 50px; display: inline-block; border: 1px solid var(--accent-color); margin-top: 15px; font-weight: bold; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 50px; font-size: 2em; position: relative; font-weight: 700; }
-        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--accent-color); margin: 10px auto 0; border-radius: 2px; }
-        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        .card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; border-bottom: 4px solid var(--primary-color); display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-7px); }
-        .card-img { width: 100%; height: 200px; object-fit: cover; }
-        .card-content { padding: 25px; flex-grow: 1; }
-        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.4em; }
-        .card p { font-size: 0.95em; color: #555; margin-bottom: 20px; }
-        .card-btn { display: block; padding: 10px 0; background-color: var(--primary-color); color: var(--white); text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s; margin-top: auto; }
+        
+        /* ہیڈر کی سیٹنگز - اونچائی کم کی گئی ہے */
+        header { 
+            background: linear-gradient(rgba(15, 76, 117, 0.95), rgba(10, 46, 71, 0.95)), url('سفارت کاری.jpg.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            color: var(--white); 
+            text-align: center; 
+            padding: 50px 20px; /* پہلے 80 تھا اب 50 کر دیا */
+        }
+        
+        /* پروفائل تصویر کا سائز تھوڑا چھوٹا کیا ہے */
+        .profile-pic { width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--accent-color); object-fit: cover; margin-bottom: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        
+        h1 { margin: 5px 0 5px; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .tagline { font-size: 1.1em; color: #dbe9f1; margin-bottom: 15px; }
+        .header-mission { background-color: rgba(200, 161, 101, 0.2); padding: 8px 20px; border-radius: 50px; display: inline-block; border: 1px solid var(--accent-color); margin-top: 10px; font-weight: bold; font-size: 0.9em; }
+        
+        /* کنٹینر کا سائز کم کیا گیا ہے تاکہ کمپیوٹر پر پھیلے نہیں */
+        .container { max-width: 950px; margin: 0 auto; padding: 30px 20px; }
+        
+        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 40px; font-size: 1.8em; position: relative; font-weight: 700; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--accent-color); margin: 10px auto 0; border-radius: 2px; }
+        
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; border-bottom: 3px solid var(--primary-color); display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); }
+        
+        /* کارڈ کی تصویر کی اونچائی کم کی گئی ہے */
+        .card-img { width: 100%; height: 170px; object-fit: cover; }
+        .card-content { padding: 20px; flex-grow: 1; }
+        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.25em; }
+        .card p { font-size: 0.9em; color: #555; margin-bottom: 15px; }
+        
+        .card-btn { display: block; padding: 8px 0; background-color: var(--primary-color); color: var(--white); text-align: center; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; margin-top: auto; font-size: 0.9em; }
         .card-btn:hover { background-color: var(--accent-color); }
-        .mission-card { grid-column: 1 / -1; background: linear-gradient(to right, #fffcf5, #fff); border-top: 5px solid var(--accent-color); border-bottom: none; display: flex; flex-direction: row; align-items: center; }
-        .mission-card .card-img { width: 40%; height: 250px; }
-        .mission-card .card-content { width: 60%; }
-        .bio-section { background: var(--white); padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 30px; }
+        
+        .mission-card { grid-column: 1 / -1; background: linear-gradient(to right, #fffcf5, #fff); border-top: 4px solid var(--accent-color); border-bottom: none; display: flex; flex-direction: row; align-items: center; }
+        .mission-card .card-img { width: 35%; height: 220px; } /* سائز ایڈجسٹ کیا */
+        .mission-card .card-content { width: 65%; }
+        
+        .bio-section { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-wrap: wrap; gap: 25px; }
         .bio-text { flex: 2; }
-        .bio-honors { flex: 1; background: #f0f7fa; padding: 20px; border-radius: 10px; border-right: 4px solid var(--accent-color); }
+        .bio-honors { flex: 1; background: #f0f7fa; padding: 15px; border-radius: 8px; border-right: 3px solid var(--accent-color); }
         .honors-list { list-style: none; padding: 0; }
-        .honors-list li { padding: 10px 0; border-bottom: 1px solid #ddd; font-size: 0.95em; }
+        .honors-list li { padding: 8px 0; border-bottom: 1px solid #ddd; font-size: 0.9em; }
         .honors-list li:last-child { border-bottom: none; }
         .honors-list li strong { color: var(--primary-color); display: block; }
-        footer { background-color: #222; color: #bbb; text-align: center; padding: 30px 20px; margin-top: 60px; }
-        @media (max-width: 768px) { .mission-card { flex-direction: column; } .mission-card .card-img, .mission-card .card-content { width: 100%; } .bio-section { flex-direction: column; } h1 { font-size: 2em; } }
+        footer { background-color: #222; color: #bbb; text-align: center; padding: 20px 20px; margin-top: 50px; font-size: 0.9em; }
+        
+        @media (max-width: 768px) { 
+            .mission-card { flex-direction: column; } 
+            .mission-card .card-img, .mission-card .card-content { width: 100%; } 
+            .mission-card .card-img { height: 200px; }
+            .bio-section { flex-direction: column; } 
+            h1 { font-size: 1.8em; } 
+            .container { padding: 20px 15px; }
+        }
     </style>
 </head>
 <body>
@@ -47,7 +76,7 @@
     <div class="header-mission">✨ مرکزی مشن: نور القرآن (ویژول قرآن پراجیکٹ)</div>
 </header>
 <div class="container">
-    <div class="card mission-card" style="margin-bottom: 50px;">
+    <div class="card mission-card" style="margin-bottom: 40px;">
         <img src="سفارت کاری.jpg.jpg" alt="Mission" class="card-img">
         <div class="card-content">
             <h3>📖 نور القرآن (ویژول پراجیکٹ)</h3>
@@ -97,7 +126,7 @@
             <p>میں ایک سینئر صحافی، کالم نگار اور پروڈیوسر ہوں۔ میری صحافتی زندگی کا آغاز اسکردو کی وادیوں سے ہوا اور ریڈیو پاکستان سے ہوتا ہوا بین الاقوامی سطح تک پہنچا۔ میرا مقصد شہرت نہیں بلکہ اپنی خدمات کو اگلی نسل کے لیے محفوظ کرنا ہے۔</p>
         </div>
         <div class="bio-honors">
-            <h3 style="color: var(--primary-color); text-align: center;">🏅 کلیدی اعزازات</h3>
+            <h3 style="color: var(--primary-color); text-align: center; font-size: 1.3em;">🏅 کلیدی اعزازات</h3>
             <ul class="honors-list">
                 <li><strong>خادمِ امام رضا علیہ السلام (2011)</strong> مشہد مقدس میں باقاعدہ خادمی کا اعزاز۔</li>
                 <li><strong>پاک ایران فلم ایوارڈ</strong> کامیاب فلم فیسٹیول کے انعقاد پر۔</li>
