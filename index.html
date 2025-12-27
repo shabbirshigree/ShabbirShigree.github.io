@@ -119,13 +119,12 @@
             border-bottom: none; 
             flex-shrink: 0; 
             /* Margin changed to left side because of row-reverse */
-            margin-left: 25px; 
-            margin-right: 0;
+            margin: 0 0 0 0;
         } 
         
         .mission-card .card-content { 
             flex-grow: 1; 
-            padding: 0; 
+            padding: 0 0 .5em 0; 
             /* Ensure text aligns left */
             text-align: left; 
         }
@@ -214,7 +213,7 @@
 
             /* Stack again on Mobile, Logo on top */
             .mission-card { flex-direction: column; text-align: center; } 
-            .mission-card .card-img { width: 50%; margin: 0 auto 15px auto; }
+            .mission-card .card-img { width: 100%; margin: 0 auto 10px auto; }
             .mission-card .card-content { text-align: center; }
             
             .highlights-grid { grid-template-columns: 1fr; }
@@ -255,13 +254,13 @@
     <div class="card mission-card">
         
         <div class="card-content">
-            <span style="background: var(--primary-color); color: #fff; padding: 4px 10px; border-radius: 5px; font-size: 0.75em; font-weight: bold; letter-spacing: 1px;">WORLD'S FIRST</span>
-            <h3 style="font-size: 1.5em;">📖 Noor-ul-Quran (Visual Project)</h3>
-            <p>A historic milestone: The world's first verse-by-verse Visual Quran translation. Featuring Persian recitation, Urdu translation, and strictly curated visuals to maintain sanctity.</p>
-            <a href="noor_project.pdf.pdf" target="_blank" class="card-btn">📄 View Full Project (PDF)</a>
+            <div style=" background: var(--primary-color); color: #fff; padding: 4px 10px; margin-bottom: 1em; border-radius: 5px; font-size: 0.75em; font-weight: bold; letter-spacing: 1px;">WORLD'S FIRST</div>
+            <img style="margin: 0 0 0 0;" src="https://res.cloudinary.com/dtqrziupt/image/upload/v1766843381/quran_logo.jpg_ie9iqz.png" alt="Noor-ul-Quran Logo" class="card-img">
+            <h3 style="font-size: 1.5em; margin: 0 0 .3em 0; padding: 0 0 0 0;">📖 Noor-ul-Quran (Visual Project)</h3>
+            <p style="margin: 0 0;">A historic milestone: The world's first verse-by-verse Visual Quran translation. Featuring Persian recitation, Urdu translation, and strictly curated visuals to maintain sanctity.</p>
         </div>
-
-        <img src="https://res.cloudinary.com/dtqrziupt/image/upload/v1766843381/quran_logo.jpg_ie9iqz.png" alt="Noor-ul-Quran Logo" class="card-img">
+        
+        <a style="margin: .5em 0 .7em 0;" href="noor_project.pdf.pdf" target="_blank" class="card-btn">📄 View Full Project (PDF)</a>
     </div>
 
     <h2 class="section-title">Legacy & Contributions</h2>
