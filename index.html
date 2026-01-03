@@ -39,7 +39,7 @@
         .ticker-text { display: inline-block; color: #000; font-weight: 700; font-size: 0.95em; padding-left: 100%; animation: scroll-left 60s linear infinite; }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        /* --- ROYAL NAVIGATION BAR --- */
+        /* --- NAVIGATION BAR --- */
         .navbar {
             background-color: var(--primary-color);
             text-align: center;
@@ -52,12 +52,11 @@
         .nav-list { list-style: none; margin: 0; padding: 0; display: inline-flex; flex-wrap: wrap; justify-content: center; }
         .nav-item { position: relative; }
 
-        /* Button Style - Optimized for Single Line */
         .nav-link {
             display: block;
             color: var(--white);
             text-decoration: none;
-            padding: 12px 12px; /* Reduced padding slightly to ensure fit */
+            padding: 12px 12px;
             font-weight: 600;
             font-size: 0.85em;
             text-transform: uppercase;
@@ -66,23 +65,20 @@
             border-right: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Hover Effect */
         .nav-link:hover {
             background: var(--gold-gradient);
             color: #000;
             text-shadow: 0px 1px 0px rgba(255,255,255,0.4);
         }
         
-        /* Special Link */
         .special-link { background: rgba(0,0,0,0.2); color: var(--gold-text); }
         .special-link:hover { color: #000; }
 
-        /* Dropdown Menu */
         .dropdown-menu {
             display: none; position: absolute; top: 100%; left: 0;
             background-color: var(--white);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            min-width: 240px; z-index: 1000; text-align: left;
+            min-width: 260px; z-index: 1000; text-align: left;
             border-top: 4px solid var(--accent-color);
             border-radius: 0 0 5px 5px;
         }
@@ -177,7 +173,8 @@
             </a>
             <div class="dropdown-menu">
                 <a href="#">📖 Project Introduction</a>
-                <a href="#">📺 Full Videos (Tilawat)</a>
+                <a href="#">🎥 Visual Quran (Full 30 Paras)</a>
+                <a href="#">🎧 Urdu Translation Only (Full 30 Paras)</a>
                 <a href="#">🎞️ Shorts & Reels</a>
                 <a href="#">💬 Messages & Tafseer</a>
             </div>
@@ -196,6 +193,7 @@
             <a href="#channels" class="nav-link">Channels <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-menu">
                 <a href="#">📺 Noor Productions (Main)</a>
+                <a href="#">📖 Noor-ul-Quran Channel</a>
                 <a href="#">👶 Tiflan-e-Noor (Kids)</a>
                 <a href="#">📰 BNN News (Digital)</a>
                 <a href="#">🛍️ Rizvi Online (Products)</a>
