@@ -18,7 +18,7 @@
             --white: #ffffff; 
             --gold-text: #ffd700;
         }
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
         
         /* --- HEADER --- */
         header { background: var(--bg-light); padding: 0; text-align: center; }
@@ -47,13 +47,18 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             position: sticky; top: 0; z-index: 1000;
             border-bottom: 3px solid var(--accent-color);
+            display: flex; justify-content: center; align-items: center;
         }
         
-        .nav-list { list-style: none; margin: 0; padding: 0; display: inline-flex; flex-wrap: wrap; justify-content: center; }
+        .mobile-menu-btn { display: none; color: #fff; font-size: 1.5em; cursor: pointer; padding: 10px 20px; position: absolute; left: 0; top: 0; }
+
+        .nav-list { list-style: none; margin: 0; padding: 0; display: inline-flex; flex-wrap: wrap; justify-content: center; transition: 0.3s; }
         .nav-item { position: relative; }
 
         .nav-link {
-            display: block;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
             color: var(--white);
             text-decoration: none;
             padding: 12px 12px;
@@ -63,6 +68,7 @@
             transition: all 0.3s ease;
             letter-spacing: 0.5px;
             border-right: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
         }
 
         .nav-link:hover {
@@ -74,6 +80,9 @@
         .special-link { background: rgba(0,0,0,0.2); color: var(--gold-text); }
         .special-link:hover { color: #000; }
 
+        .fa-caret-down { margin-left: 8px; font-size: 0.9em; transition: transform 0.3s ease; }
+
+        /* Dropdown Basics */
         .dropdown-menu {
             display: none; position: absolute; top: 100%; left: 0;
             background-color: var(--white);
@@ -90,8 +99,19 @@
         .dropdown-menu a:hover {
             background-color: #f8f9fa; color: var(--primary-color); padding-left: 22px; border-left: 4px solid var(--accent-color);
         }
-        .nav-item:hover .dropdown-menu { display: block; }
-        .fa-caret-down { margin-left: 5px; font-size: 0.8em; opacity: 0.7; }
+
+        /* --- DESKTOP HOVER --- */
+        @media (min-width: 769px) {
+            .nav-item:hover .dropdown-menu { display: block; }
+        }
+
+        /* Close Button for Sidebar */
+        .close-sidebar-btn { display: none; }
+
+        .menu-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 1001;
+        }
 
         /* --- CONTENT --- */
         .container { max-width: 950px; margin: 0 auto; padding: 20px; }
@@ -110,7 +130,7 @@
         .highlight-box h4 { margin-top: 0; color: var(--primary-color); font-size: 1.1em; }
         .badge-oma { background: #000; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.7em; margin-left: 10px; }
 
-        /* --- DIGITAL LIBRARY (FIXED OVERLAP) --- */
+        /* BOOKS */
         .books-section { 
             background: linear-gradient(135deg, #0f4c75 0%, #0a3d61 100%);
             color: #fff; padding: 40px 30px; border-radius: 15px; text-align: center; margin-bottom: 50px; 
@@ -118,14 +138,15 @@
         }
         .books-grid { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 30px; /* FIXED GAP */
+            gap: 30px; 
             margin-top: 30px; text-align: left; 
         }
         .book-item { background: rgba(255, 255, 255, 0.1); padding: 20px 15px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.2); display: flex; flex-direction: column; height: 100%; transition: 0.3s; }
         .book-item:hover { transform: translateY(-5px); border-color: var(--accent-color); }
         .read-book-btn { display: block; text-align: center; background: rgba(0,0,0,0.6); color: #fff; padding: 8px; border-radius: 5px; text-decoration: none; margin-top: auto; border: 1px solid var(--accent-color); }
         .read-book-btn:hover { background: var(--accent-color); color: #000; }
-        .book-fatima { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('booye_bahisht_cover.jpg.png'); background-size: cover; background-position: center; background-color: #554826; }
+        
+        .book-fatima { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://res.cloudinary.com/dtqrziupt/image/upload/v1766843382/booye_bahisht_cover.jpg_hf195o.png'); background-size: cover; background-position: center; background-color: #554826; }
         
         .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 50px; }
         .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: 0.3s; }
@@ -138,14 +159,76 @@
         .bio-honors li { padding: 8px 0; border-bottom: 1px solid #dae3e7; display: flex; align-items: flex-start; }
         .bio-honors li::before { content: '🏆'; margin-right: 10px; color: var(--gold-dark); }
 
-        /* Mobile Optimization */
+        /* --- MOBILE SIDEBAR --- */
         @media (max-width: 768px) { 
+            .navbar { justify-content: flex-start; min-height: 50px; }
+            .mobile-menu-btn { display: block; z-index: 1002; }
             .banner-overlay-bottom h1 { font-size: 1.4em; }
-            .nav-list { display: flex; flex-direction: column; width: 100%; } 
-            .nav-link { border-bottom: 1px solid rgba(255,255,255,0.05); text-align: left; padding: 12px 20px; width: 100%; box-sizing: border-box; }
-            .dropdown-menu { position: static; box-shadow: none; border-top: none; padding-left: 20px; background: #0a2e47; border-left: 3px solid var(--accent-color); }
-            .dropdown-menu a { color: #ccc; border-bottom: none; }
-            .dropdown-menu a:hover { color: #fff; background: transparent; }
+            
+            /* Sidebar Container */
+            .nav-list { 
+                position: fixed; 
+                top: 0; 
+                left: -280px; 
+                width: 280px; 
+                height: 100vh; 
+                background: var(--dark-blue); 
+                flex-direction: column; 
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding-top: 60px; 
+                z-index: 2000;
+                box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+                overflow-y: auto;
+            }
+
+            .nav-list.active { left: 0; }
+
+            .nav-item { width: 100%; }
+            .nav-link { 
+                border-bottom: 1px solid rgba(255,255,255,0.05); 
+                border-right: none;
+                text-align: left; 
+                padding: 15px 20px; 
+                width: 100%; 
+                box-sizing: border-box; 
+                font-size: 1em;
+            }
+
+            /* Disable Hover on Mobile */
+            .nav-item:hover .dropdown-menu { display: none; }
+            
+            /* Sub-fields in Sidebar */
+            .dropdown-menu.show-mobile { 
+                display: block !important; 
+                position: static; 
+                box-shadow: none; 
+                border-top: none; 
+                padding-left: 0; 
+                background: #082438; /* Thoda dark background sub-fields ke liye */
+                border-left: none;
+                width: 100%;
+                animation: fadeIn 0.3s;
+            }
+            
+            /* Sub-field Links Style */
+            .dropdown-menu a { 
+                color: #ccc; 
+                border-bottom: 1px solid rgba(255,255,255,0.03); 
+                padding-left: 35px; /* Indentation for hierarchy */
+                font-size: 0.9em;
+            }
+            .dropdown-menu a:hover { color: #fff; background: transparent; padding-left: 40px; }
+
+            /* Arrow Rotation */
+            .nav-link.active-arrow .fa-caret-down { transform: rotate(180deg); }
+
+            /* Close Button */
+            .close-sidebar-btn {
+                display: block; position: absolute; top: 15px; right: 20px;
+                font-size: 1.8em; color: #fff; cursor: pointer; background: none; border: none;
+            }
+
             .mission-card { flex-direction: column; text-align: center; } 
             .mission-card .card-img { width: 50%; margin: 0 auto 15px auto; order: 1; }
             .mission-card .card-content { width: 100%; text-align: center; order: 2; }
@@ -155,9 +238,11 @@
 </head>
 <body>
 
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
 <header>
     <div class="banner-container">
-        <img src="top_banner.jpg" alt="Haji Shabbir Ahmed Shigri" class="main-banner-img">
+        <img src="https://res.cloudinary.com/dtqrziupt/image/upload/v1766843382/top_banner_xobuyv.jpg" alt="Haji Shabbir Ahmed Shigri" class="main-banner-img">
         <div class="banner-overlay-bottom">
             <h1>Haji Shabbir Ahmed Shigri</h1>
             <p>Senior Journalist | Cultural Ambassador | Founder Noor Productions</p>
@@ -173,77 +258,92 @@
 </div>
 
 <nav class="navbar">
-    <ul class="nav-list">
-        <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-home"></i> Home</a></li>
+    <div class="mobile-menu-btn" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i> Menu
+    </div>
+
+    <ul class="nav-list" id="sidebarMenu">
+        <button class="close-sidebar-btn" onclick="toggleMenu()">&times;</button>
+
+        <li class="nav-item"><a href="#" class="nav-link" onclick="closeSidebarOnLink()"><i class="fa fa-home"></i> Home</a></li>
 
         <li class="nav-item">
-            <a href="#noor-project" class="nav-link special-link">
-                <i class="fa fa-book-open"></i> Noor-ul-Quran <i class="fa fa-caret-down"></i>
+            <a href="javascript:void(0)" class="nav-link special-link" onclick="toggleDropdown(event)">
+                <span><i class="fa fa-book-open"></i> Noor-ul-Quran</span> <i class="fa fa-caret-down"></i>
             </a>
             <div class="dropdown-menu">
-                <a href="#">📖 Project Introduction</a>
-                <a href="#">🎥 Visual Quran (Full 30 Paras)</a>
-                <a href="#">🎧 Urdu Translation Only (Full 30 Paras)</a>
-                <a href="#">🎞️ Shorts & Reels</a>
-                <a href="#">💬 Messages & Tafseer</a>
+                <a href="#noor-project" onclick="closeSidebarOnLink()">📖 Project Introduction</a>
+                <a href="#" onclick="closeSidebarOnLink()">🎥 Visual Quran (Full 30 Paras)</a>
+                <a href="#" onclick="closeSidebarOnLink()">🎧 Urdu Translation Only</a>
+                <a href="#" onclick="closeSidebarOnLink()">🎞️ Shorts & Reels</a>
+                <a href="#" onclick="closeSidebarOnLink()">💬 Messages & Tafseer</a>
             </div>
         </li>
 
         <li class="nav-item">
-            <a href="#about" class="nav-link">About Me <i class="fa fa-caret-down"></i></a>
+            <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown(event)">
+                <span>About Me</span> <i class="fa fa-caret-down"></i>
+            </a>
             <div class="dropdown-menu">
-                <a href="#">📖 My Story (Biography)</a>
-                <a href="#">📄 Curriculum Vitae (CV)</a>
-                <a href="#">🌟 Testimonials (Legends)</a>
+                <a href="#about" onclick="closeSidebarOnLink()">📖 My Story (Biography)</a>
+                <a href="#" onclick="closeSidebarOnLink()">📄 Curriculum Vitae (CV)</a>
+                <a href="#" onclick="closeSidebarOnLink()">🌟 Testimonials (Legends)</a>
             </div>
         </li>
 
         <li class="nav-item">
-            <a href="#channels" class="nav-link">Channels <i class="fa fa-caret-down"></i></a>
+            <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown(event)">
+                <span>Channels</span> <i class="fa fa-caret-down"></i>
+            </a>
             <div class="dropdown-menu">
-                <a href="#">📺 Noor Productions (Main)</a>
-                <a href="#">📖 Noor-ul-Quran Channel</a>
-                <a href="#">👶 Tiflan-e-Noor (Kids)</a>
-                <a href="#">📰 BNN News (Digital)</a>
-                <a href="#">🛍️ Rizvi Online (Products)</a>
+                <a href="#" onclick="closeSidebarOnLink()">📺 Noor Productions (Main)</a>
+                <a href="#" onclick="closeSidebarOnLink()">📖 Noor-ul-Quran Channel</a>
+                <a href="#" onclick="closeSidebarOnLink()">👶 Tiflan-e-Noor (Kids)</a>
+                <a href="#" onclick="closeSidebarOnLink()">📰 BNN News (Digital)</a>
+                <a href="#" onclick="closeSidebarOnLink()">🛍️ Rizvi Online (Products)</a>
             </div>
         </li>
 
         <li class="nav-item">
-            <a href="#media" class="nav-link">Media Gallery <i class="fa fa-caret-down"></i></a>
+            <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown(event)">
+                <span>Media Gallery</span> <i class="fa fa-caret-down"></i>
+            </a>
             <div class="dropdown-menu">
-                <a href="#">🎤 Talk Shows</a>
-                <a href="#">👥 Interviews</a>
-                <a href="#">📺 Documentaries</a>
-                <a href="#">🎙️ Radio Pakistan Archive</a>
+                <a href="#media" onclick="closeSidebarOnLink()">🎤 Talk Shows</a>
+                <a href="#" onclick="closeSidebarOnLink()">👥 Interviews</a>
+                <a href="#" onclick="closeSidebarOnLink()">📺 Documentaries</a>
+                <a href="#" onclick="closeSidebarOnLink()">🎙️ Radio Pakistan Archive</a>
             </div>
         </li>
 
         <li class="nav-item">
-            <a href="library.html" class="nav-link">Library <i class="fa fa-caret-down"></i></a>
+            <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown(event)">
+                <span>Library</span> <i class="fa fa-caret-down"></i>
+            </a>
             <div class="dropdown-menu">
-                <a href="library.html">📚 Books (PDF)</a>
-                <a href="library.html">✍️ Columns & Articles</a>
-                <a href="library.html">✈️ Travelogues</a>
-                <a href="library.html">📖 Magazines</a>
+                <a href="library.html" onclick="closeSidebarOnLink()">📚 Books (PDF)</a>
+                <a href="library.html" onclick="closeSidebarOnLink()">✍️ Columns & Articles</a>
+                <a href="library.html" onclick="closeSidebarOnLink()">✈️ Travelogues</a>
+                <a href="library.html" onclick="closeSidebarOnLink()">📖 Magazines</a>
             </div>
         </li>
 
         <li class="nav-item">
-            <a href="#services" class="nav-link">Services <i class="fa fa-caret-down"></i></a>
+            <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown(event)">
+                <span>Services</span> <i class="fa fa-caret-down"></i>
+            </a>
             <div class="dropdown-menu">
-                <a href="#">🇵🇰🇮🇷 Cultural Diplomacy</a>
-                <a href="#">🕌 Religious Services</a>
-                <a href="#">🕊️ Social Activities</a>
+                <a href="#services" onclick="closeSidebarOnLink()">🇵🇰🇮🇷 Cultural Diplomacy</a>
+                <a href="#" onclick="closeSidebarOnLink()">🕌 Religious Services</a>
+                <a href="#" onclick="closeSidebarOnLink()">🕊️ Social Activities</a>
             </div>
         </li>
 
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link" onclick="closeSidebarOnLink()">Contact</a></li>
     </ul>
 </nav>
 
 <div class="container">
-    
     <div id="noor-project" class="card mission-card">
         <div class="card-content">
             <span style="background: var(--primary-color); color: #fff; padding: 4px 10px; border-radius: 5px; font-size: 0.75em; font-weight: bold;">WORLD'S FIRST</span>
@@ -252,7 +352,7 @@
             featuring Persian recitation, Urdu translation, and strictly curated visuals.</p>
             <a href="noor_project.pdf.pdf" target="_blank" class="card-btn">📄 View Full Project (PDF)</a>
         </div>
-        <img src="quran_logo.jpg.png" alt="Noor-ul-Quran Logo" class="card-img">
+        <img src="https://res.cloudinary.com/dtqrziupt/image/upload/v1766843381/quran_logo.jpg_ie9iqz.png" alt="Noor-ul-Quran Logo" class="card-img">
     </div>
 
     <div id="about">
@@ -303,21 +403,21 @@
         <h2 class="section-title">Hubs & Services</h2>
         <div class="hub-grid">
             <div class="card">
-                <img src="radio.jpg.jpg" alt="Radio" class="card-img">
+                <img src="https://res.cloudinary.com/dtqrziupt/image/upload/v1766843381/radio.jpg_ishqxf.jpg" alt="Radio" class="card-img">
                 <div class="card-content">
                     <h3>🎙️ Radio & Broadcasting</h3>
                     <p>Decades of service at Radio Pakistan (FM 93). Hosted popular programs like "Phool Aur Kaliyan".</p>
                 </div>
             </div>
             <div class="card">
-                <img src="film.jpg.jpg" alt="Film" class="card-img">
+                <img src="https://res.cloudinary.com/dtqrziupt/image/upload/v1766843381/film.jpg_ni9h46.jpg" alt="Film" class="card-img">
                 <div class="card-content">
                     <h3>🎥 Film & Media Awards</h3>
                     <p>Organizer of "Iranian Film Festival" in Pakistan. Recipient of <strong>Pak-Iran Film Award</strong>.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="diplomacy.jpg.jpg" alt="Diplomacy" class="card-img">
+                <img src="https://res.cloudinary.com/dtqrziupt/image/upload/v1766843381/diplomacy.jpg_l6zxew.jpg" alt="Diplomacy" class="card-img">
                 <div class="card-content">
                     <h3>🇵🇰🇮🇷 Cultural Diplomacy</h3>
                     <p>Served as PRO at Khana-e-Farhang Iran. Promoting Hybrid Tourism and brotherhood.</p>
@@ -346,6 +446,63 @@
     <p>All Rights Reserved &copy; 2025 - Haji Shabbir Ahmed Shigri</p>
     <p>Contact: shigri51214@gmail.com</p>
 </footer>
+
+<script>
+    // 1. Sidebar Kholne/Band Karne ka Function
+    function toggleMenu() {
+        const menu = document.getElementById('sidebarMenu');
+        const overlay = document.getElementById('menuOverlay');
+        menu.classList.toggle('active');
+        
+        if (menu.classList.contains('active')) {
+            overlay.style.display = 'block';
+            document.body.style.overflow = 'hidden'; 
+        } else {
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto'; 
+            closeAllDropdowns(); // Sidebar band ho toh sub-fields bhi band ho jayein
+        }
+    }
+
+    // 2. Main Field (Parent) Click Function
+    function toggleDropdown(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault(); // Link par jane se rokein
+            
+            const link = e.currentTarget;
+            const dropdown = link.nextElementSibling;
+            
+            // Check karein agar ye pehle se khula hai
+            const isOpen = dropdown.classList.contains('show-mobile');
+
+            // Pehle baaki sab band karein (Accordion Logic)
+            closeAllDropdowns();
+
+            // Agar ye band tha, toh ab khol dein
+            if (!isOpen) {
+                dropdown.classList.add('show-mobile');
+                link.classList.add('active-arrow');
+            }
+        }
+    }
+
+    // 3. Sub-field Click Function (Sidebar Band karega)
+    function closeSidebarOnLink() {
+        if (window.innerWidth <= 768) {
+            toggleMenu();
+        }
+    }
+
+    // Helper: Sab Sub-fields ko band karne ke liye
+    function closeAllDropdowns() {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('show-mobile');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active-arrow');
+        });
+    }
+</script>
 
 </body>
 </html>
