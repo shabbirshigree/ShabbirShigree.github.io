@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library - Haji Shabbir Ahmed Shigri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root { 
+            --primary-color: #0f4c75; 
+            --accent-color: #c8a165; 
+            --bg-light: #f4f7f6; 
+            --text-dark: #2c3e50; 
+            --white: #ffffff; 
+        }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); }
+        
+        /* HEADER & NAV (Same as Main Page for consistency) */
+        header { background: #000; padding: 20px; text-align: center; color: #fff; border-bottom: 4px solid var(--accent-color); }
+        header h1 { margin: 0; font-size: 2em; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .nav-back { text-align: left; padding: 10px 20px; background: var(--primary-color); }
+        .nav-back a { color: #fff; text-decoration: none; font-weight: bold; display: flex; align-items: center; width: fit-content; }
+        .nav-back a:hover { color: var(--accent-color); }
+
+        /* LIBRARY HEADER */
+        .lib-header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #0f4c75 0%, #0a2e47 100%); color: #fff; }
+        .lib-header h2 { font-size: 2.5em; margin: 0; color: var(--accent-color); }
+        .lib-header p { font-size: 1.1em; opacity: 0.9; margin-top: 10px; }
+
+        /* CATEGORIES */
+        .category-section { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .cat-title { border-left: 5px solid var(--accent-color); padding-left: 15px; color: var(--primary-color); font-size: 1.8em; margin-bottom: 20px; font-weight: 700; }
+
+        /* BOOKS GRID */
+        .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+        
+        .book-card { 
+            background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            transition: 0.3s; display: flex; flex-direction: column; border: 1px solid #eee;
+        }
+        .book-card:hover { transform: translateY(-5px); border-color: var(--accent-color); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        
+        .book-cover { 
+            height: 250px; background-color: #ddd; display: flex; align-items: center; justify-content: center; 
+            color: #555; font-size: 0.9em; font-weight: bold; text-align: center; padding: 10px;
+            background-size: cover; background-position: center;
+        }
+        
+        /* Placeholder Colors for Covers */
+        .cover-green { background: linear-gradient(45deg, #154625, #2a7a40); color: #fff; } /* Madina */
+        .cover-brown { background: linear-gradient(45deg, #554826, #8a733e); color: #fff; } /* Booy-e-Bahisht */
+        .cover-blue { background: linear-gradient(45deg, #0f4c75, #3282b8); color: #fff; } /* Iran */
+        .cover-teal { background: linear-gradient(45deg, #0b5e68, #1898a8); color: #fff; } /* Anees */
+
+        .book-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .book-title { font-size: 1.2em; font-weight: 700; margin: 0 0 5px; color: var(--primary-color); }
+        .book-desc { font-size: 0.9em; color: #666; margin-bottom: 15px; flex-grow: 1; }
+        
+        .btn-group { display: flex; gap: 10px; margin-top: auto; }
+        .btn { flex: 1; text-align: center; padding: 8px; font-size: 0.8em; border-radius: 4px; text-decoration: none; font-weight: 600; }
+        .btn-read { background: var(--primary-color); color: #fff; }
+        .btn-down { background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); }
+        .btn:hover { opacity: 0.8; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 20px; background: #000; color: #fff; margin-top: 50px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<div class="nav-back">
+    <a href="index.html"><i class="fa fa-arrow-left"></i> &nbsp; Back to Home Page</a>
+</div>
+
+<div class="lib-header">
+    <h2>📚 Digital Library & Archives</h2>
+    <p>The complete literary collection of Haji Shabbir Ahmed Shigri<br>(Sadaqah-e-Jariyah)</p>
+</div>
+
+<div class="category-section">
+    <h3 class="cat-title">📖 Seerat & History (Biographies)</h3>
+    <div class="books-grid">
+        
+        <div class="book-card">
+            <div class="book-cover cover-brown">
+                <i class="fa fa-book fa-2x"></i><br>Booy-e-Bahisht<br>(Cover Img)
+            </div>
+            <div class="book-info">
+                <div class="book-title">Booy-e-Bahisht</div>
+                <p class="book-desc">A profound biography of Syeda Fatima Zahra (S.A). Dedicated to Late Dr. Muhammad Raza.</p>
+                <div class="btn-group">
+                    <a href="booye_bahisht.pdf" class="btn btn-read">Read PDF</a>
+                    <a href="#" class="btn btn-down">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <div class="book-cover cover-teal">
+                <i class="fa fa-book fa-2x"></i><br>Anees-ul-Nufoos<br>(Cover Img)
+            </div>
+            <div class="book-info">
+                <div class="book-title">Anees-ul-Nufoos</div>
+                <p class="book-desc">A dedicated research work on the life and teachings of Imam Reza (a.s).</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-read">Read Online</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <div class="book-cover cover-green">
+                <i class="fa fa-book fa-2x"></i><br>Madina-tul-Ahlulbayt<br>(Cover Img)
+            </div>
+            <div class="book-info">
+                <div class="book-title">Madina-tul-Ahlulbayt</div>
+                <p class="book-desc">Historical visualization of sacred sites and history of Madina.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-read">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="category-section">
+    <h3 class="cat-title">✈️ Travelogues (Safar-Namay)</h3>
+    <div class="books-grid">
+        
+        <div class="book-card">
+            <div class="book-cover cover-blue">
+                <i class="fa fa-plane fa-2x"></i><br>Siyahat-e-Iran<br>(Cover Img)
+            </div>
+            <div class="book-info">
+                <div class="book-title">Siyahat-e-Iran</div>
+                <p class="book-desc">The first comprehensive illustrated guide to Iranian tourism in Urdu.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-read">Read Online</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <div class="book-cover" style="background: #eee; color: #777;">
+                More Travelogues<br>Coming Soon
+            </div>
+            <div class="book-info">
+                <div class="book-title">Ziarat-e-Muqadasa</div>
+                <p class="book-desc">Upcoming travelogues of Iraq and Syria.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="category-section">
+    <h3 class="cat-title">✍️ Translations (Tarajim)</h3>
+    <div class="books-grid">
+        <div class="book-card">
+            <div class="book-cover" style="background: #333; color: #fff;">
+                Meraj-us-Sa'adah
+            </div>
+            <div class="book-info">
+                <div class="book-title">Meraj-us-Sa'adah (Summary)</div>
+                <p class="book-desc">Urdu translation and summarization of the classic ethical text.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-read">Read PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="category-section">
+    <h3 class="cat-title">📰 Articles & Columns</h3>
+    <p>A collection of over 300+ articles published in national newspapers.</p>
+    <ul style="list-style: none; padding: 0;">
+        <li style="padding: 10px; border-bottom: 1px solid #ccc;"><i class="fa fa-newspaper"></i> Latest Column on Current Affairs (Daily Jang)</li>
+        <li style="padding: 10px; border-bottom: 1px solid #ccc;"><i class="fa fa-newspaper"></i> Cultural Relations of Pak-Iran (Nawa-e-Waqt)</li>
+        <li style="padding: 10px; border-bottom: 1px solid #ccc;"><i class="fa fa-newspaper"></i> The Importance of Visual Quran (Express)</li>
+    </ul>
+</div>
+
+<footer>
+    <p>All Rights Reserved &copy; 2025 - Haji Shabbir Ahmed Shigri</p>
+</footer>
+
+</body>
+</html>
